@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		910AD27325A60E200051FC98 /* Trivial_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */; };
-		910AD27525A60E200051FC98 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27425A60E200051FC98 /* Login.swift */; };
+		910AD27525A60E200051FC98 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27425A60E200051FC98 /* LoginView.swift */; };
 		910AD27725A60E220051FC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910AD27625A60E220051FC98 /* Assets.xcassets */; };
 		910AD27A25A60E220051FC98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910AD27925A60E220051FC98 /* Preview Assets.xcassets */; };
 		910AD28525A60E230051FC98 /* Trivial_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28425A60E230051FC98 /* Trivial_iOSTests.swift */; };
@@ -26,6 +26,11 @@
 		9126235B25A68578007332CF /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235A25A68578007332CF /* ServiceLayer.swift */; };
 		9126236025A68703007332CF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235F25A68703007332CF /* GameViewModel.swift */; };
 		9126236525A68829007332CF /* PublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126236425A68829007332CF /* PublisherExtensions.swift */; };
+		9173BF7325A77A9B00FCD5D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF7225A77A9B00FCD5D4 /* LoginViewModel.swift */; };
+		9173BF7B25A77EB900FCD5D4 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF7A25A77EB900FCD5D4 /* Validation.swift */; };
+		9173BF8025A77EEB00FCD5D4 /* ValidationPublishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF7F25A77EEB00FCD5D4 /* ValidationPublishers.swift */; };
+		9173BF8525A77F5A00FCD5D4 /* Publisher+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF8425A77F5A00FCD5D4 /* Publisher+Validation.swift */; };
+		9173BF8A25A77FA100FCD5D4 /* Validation+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF8925A77FA100FCD5D4 /* Validation+SwiftUI.swift */; };
 		919E093325A68ED800458960 /* QuestionsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093225A68ED800458960 /* QuestionsAction.swift */; };
 		919E093825A68F1400458960 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093725A68F1400458960 /* Reducer.swift */; };
 		919E093D25A68F2400458960 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093C25A68F2400458960 /* Action.swift */; };
@@ -53,7 +58,7 @@
 /* Begin PBXFileReference section */
 		910AD26F25A60E200051FC98 /* Trivial iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivial iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial_iOSApp.swift; sourceTree = "<group>"; };
-		910AD27425A60E200051FC98 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		910AD27425A60E200051FC98 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		910AD27625A60E220051FC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		910AD27925A60E220051FC98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		910AD27B25A60E220051FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +81,11 @@
 		9126235A25A68578007332CF /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
 		9126235F25A68703007332CF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		9126236425A68829007332CF /* PublisherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtensions.swift; sourceTree = "<group>"; };
+		9173BF7225A77A9B00FCD5D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9173BF7A25A77EB900FCD5D4 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		9173BF7F25A77EEB00FCD5D4 /* ValidationPublishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationPublishers.swift; sourceTree = "<group>"; };
+		9173BF8425A77F5A00FCD5D4 /* Publisher+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Validation.swift"; sourceTree = "<group>"; };
+		9173BF8925A77FA100FCD5D4 /* Validation+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+SwiftUI.swift"; sourceTree = "<group>"; };
 		919E093225A68ED800458960 /* QuestionsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAction.swift; sourceTree = "<group>"; };
 		919E093725A68F1400458960 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		919E093C25A68F2400458960 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -132,10 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				919E094425A68F8F00458960 /* Modules */,
-				9126235425A684C8007332CF /* APIService */,
-				9126234425A683BF007332CF /* Model */,
-				9126233B25A68199007332CF /* Redux */,
 				910AD2AE25A653F60051FC98 /* Util */,
+				9126234425A683BF007332CF /* Model */,
 				910AD2A025A60F3F0051FC98 /* Brand */,
 				910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */,
 				910AD27625A60E220051FC98 /* Assets.xcassets */,
@@ -184,10 +192,9 @@
 		910AD2AE25A653F60051FC98 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9185214725A78EB7006F212F /* BrandViews */,
+				9173BF7925A77EA200FCD5D4 /* Validation */,
 				910AD2AF25A654050051FC98 /* ViewModifiers.swift */,
-				9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */,
-				9126233025A66298007332CF /* BrandField.swift */,
-				9126233525A67D31007332CF /* BrandButton.swift */,
 				9126236425A68829007332CF /* PublisherExtensions.swift */,
 			);
 			path = Util;
@@ -223,10 +230,42 @@
 			path = APIService;
 			sourceTree = "<group>";
 		};
+		9173BF7125A77A7900FCD5D4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				910AD27425A60E200051FC98 /* LoginView.swift */,
+				9173BF7225A77A9B00FCD5D4 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9173BF7925A77EA200FCD5D4 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				9173BF7A25A77EB900FCD5D4 /* Validation.swift */,
+				9173BF7F25A77EEB00FCD5D4 /* ValidationPublishers.swift */,
+				9173BF8425A77F5A00FCD5D4 /* Publisher+Validation.swift */,
+				9173BF8925A77FA100FCD5D4 /* Validation+SwiftUI.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		9185214725A78EB7006F212F /* BrandViews */ = {
+			isa = PBXGroup;
+			children = (
+				9126233525A67D31007332CF /* BrandButton.swift */,
+				9126233025A66298007332CF /* BrandField.swift */,
+				9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */,
+			);
+			path = BrandViews;
+			sourceTree = "<group>";
+		};
 		919E094425A68F8F00458960 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				910AD27425A60E200051FC98 /* Login.swift */,
+				9173BF7125A77A7900FCD5D4 /* Login */,
+				9126233B25A68199007332CF /* Redux */,
+				9126235425A684C8007332CF /* APIService */,
 				919E094825A68FBC00458960 /* Game.swift */,
 			);
 			path = Modules;
@@ -363,9 +402,11 @@
 			files = (
 				910AD2A225A60F4D0051FC98 /* BrandFont.swift in Sources */,
 				9126234E25A68415007332CF /* QuestionResponse.swift in Sources */,
+				9173BF7B25A77EB900FCD5D4 /* Validation.swift in Sources */,
 				9126232C25A65BCD007332CF /* BrandRoundedRectangle.swift in Sources */,
 				910AD2AA25A612BE0051FC98 /* BrandColor.swift in Sources */,
 				9126235B25A68578007332CF /* ServiceLayer.swift in Sources */,
+				9173BF8A25A77FA100FCD5D4 /* Validation+SwiftUI.swift in Sources */,
 				919E093325A68ED800458960 /* QuestionsAction.swift in Sources */,
 				9126235625A684D1007332CF /* Router.swift in Sources */,
 				9126236025A68703007332CF /* GameViewModel.swift in Sources */,
@@ -373,14 +414,17 @@
 				919E093D25A68F2400458960 /* Action.swift in Sources */,
 				919E093825A68F1400458960 /* Reducer.swift in Sources */,
 				919E095425A6900B00458960 /* LoginAction.swift in Sources */,
-				910AD27525A60E200051FC98 /* Login.swift in Sources */,
+				9173BF8025A77EEB00FCD5D4 /* ValidationPublishers.swift in Sources */,
+				910AD27525A60E200051FC98 /* LoginView.swift in Sources */,
 				9126234625A683CF007332CF /* Question.swift in Sources */,
 				910AD27325A60E200051FC98 /* Trivial_iOSApp.swift in Sources */,
+				9173BF8525A77F5A00FCD5D4 /* Publisher+Validation.swift in Sources */,
 				919E094925A68FBC00458960 /* Game.swift in Sources */,
 				910AD2B025A654050051FC98 /* ViewModifiers.swift in Sources */,
 				9126233125A66298007332CF /* BrandField.swift in Sources */,
 				9126233625A67D31007332CF /* BrandButton.swift in Sources */,
 				9126236525A68829007332CF /* PublisherExtensions.swift in Sources */,
+				9173BF7325A77A9B00FCD5D4 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

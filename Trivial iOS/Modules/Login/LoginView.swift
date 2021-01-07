@@ -11,9 +11,9 @@ import SwiftUI
 struct Login: View {
   @EnvironmentObject var store: Store
   
-  @State var userOne: String = ""
-  @State var userTwo: String = ""
-  
+  @ObservedObject var viewModel:LoginViewModel = LoginViewModel()
+  @State var isButtonDisabled = true
+
   var padding: CGFloat = 60
   
   var body: some View {
@@ -28,17 +28,20 @@ struct Login: View {
           VStack(alignment: .leading){
             Text("Nickname User 1")
               .foregroundColor(.brand_white)
-            BrandTextField(text: self.$userOne)
+            BrandTextField(text: $viewModel.userOne)
+              .validation(viewModel.userOneValidation)
           }
           VStack(alignment: .leading){
             Text("Nickname User 2")
               .foregroundColor(.brand_white)
-            BrandTextField(text: self.$userTwo)
+            BrandTextField(text: $viewModel.userTwo)
+              .validation(viewModel.userTwoValidation)
+              .validation(viewModel.nonDuplicatedUsersValidation)
           }
           Spacer()
           BrandButton(text: "Enter", textColor: .brand_white, backgroundColor: .brand_green, action: {
-              self.store.dispatch(action: SetLoginAction(users: (userOne,userTwo)))
-          })
+            self.store.dispatch(action: SetLoginAction(users: (viewModel.userOne,viewModel.userTwo)))
+          }).disabled(isButtonDisabled)
         }
         .padding()
         .frame(minHeight: 0, idealHeight: 100, maxHeight: 400)
@@ -48,6 +51,7 @@ struct Login: View {
       .padding(.top,-padding)
       Spacer()
     }.backgroundConfig()
+    .onReceive(viewModel.allValidation, perform: {validation in self.isButtonDisabled = !validation.isSuccess})
     
   }
 }
