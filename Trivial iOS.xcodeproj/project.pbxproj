@@ -8,11 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		910AD27325A60E200051FC98 /* Trivial_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */; };
-		910AD27525A60E200051FC98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27425A60E200051FC98 /* ContentView.swift */; };
+		910AD27525A60E200051FC98 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27425A60E200051FC98 /* Login.swift */; };
 		910AD27725A60E220051FC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910AD27625A60E220051FC98 /* Assets.xcassets */; };
 		910AD27A25A60E220051FC98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910AD27925A60E220051FC98 /* Preview Assets.xcassets */; };
 		910AD28525A60E230051FC98 /* Trivial_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28425A60E230051FC98 /* Trivial_iOSTests.swift */; };
 		910AD29025A60E230051FC98 /* Trivial_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28F25A60E230051FC98 /* Trivial_iOSUITests.swift */; };
+		910AD2A225A60F4D0051FC98 /* BrandFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD2A125A60F4D0051FC98 /* BrandFont.swift */; };
+		910AD2AA25A612BE0051FC98 /* BrandColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD2A925A612BE0051FC98 /* BrandColor.swift */; };
+		910AD2B025A654050051FC98 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD2AF25A654050051FC98 /* ViewModifiers.swift */; };
+		9126232C25A65BCD007332CF /* BrandRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */; };
+		9126233125A66298007332CF /* BrandField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126233025A66298007332CF /* BrandField.swift */; };
+		9126233625A67D31007332CF /* BrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126233525A67D31007332CF /* BrandButton.swift */; };
+		9126233D25A681A3007332CF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126233C25A681A3007332CF /* Store.swift */; };
+		9126234625A683CF007332CF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126234525A683CF007332CF /* Question.swift */; };
+		9126234E25A68415007332CF /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126234D25A68415007332CF /* QuestionResponse.swift */; };
+		9126235625A684D1007332CF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235525A684D1007332CF /* Router.swift */; };
+		9126235B25A68578007332CF /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235A25A68578007332CF /* ServiceLayer.swift */; };
+		9126236025A68703007332CF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235F25A68703007332CF /* GameViewModel.swift */; };
+		9126236525A68829007332CF /* PublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126236425A68829007332CF /* PublisherExtensions.swift */; };
+		919E093325A68ED800458960 /* QuestionsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093225A68ED800458960 /* QuestionsAction.swift */; };
+		919E093825A68F1400458960 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093725A68F1400458960 /* Reducer.swift */; };
+		919E093D25A68F2400458960 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093C25A68F2400458960 /* Action.swift */; };
+		919E094925A68FBC00458960 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E094825A68FBC00458960 /* Game.swift */; };
+		919E095425A6900B00458960 /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E095325A6900B00458960 /* LoginAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +53,7 @@
 /* Begin PBXFileReference section */
 		910AD26F25A60E200051FC98 /* Trivial iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivial iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial_iOSApp.swift; sourceTree = "<group>"; };
-		910AD27425A60E200051FC98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		910AD27425A60E200051FC98 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		910AD27625A60E220051FC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		910AD27925A60E220051FC98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		910AD27B25A60E220051FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +63,24 @@
 		910AD28B25A60E230051FC98 /* Trivial iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trivial iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910AD28F25A60E230051FC98 /* Trivial_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial_iOSUITests.swift; sourceTree = "<group>"; };
 		910AD29125A60E230051FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		910AD2A125A60F4D0051FC98 /* BrandFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFont.swift; sourceTree = "<group>"; };
+		910AD2A925A612BE0051FC98 /* BrandColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandColor.swift; sourceTree = "<group>"; };
+		910AD2AF25A654050051FC98 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandRoundedRectangle.swift; sourceTree = "<group>"; };
+		9126233025A66298007332CF /* BrandField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandField.swift; sourceTree = "<group>"; };
+		9126233525A67D31007332CF /* BrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButton.swift; sourceTree = "<group>"; };
+		9126233C25A681A3007332CF /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9126234525A683CF007332CF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		9126234D25A68415007332CF /* QuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
+		9126235525A684D1007332CF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9126235A25A68578007332CF /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		9126235F25A68703007332CF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		9126236425A68829007332CF /* PublisherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtensions.swift; sourceTree = "<group>"; };
+		919E093225A68ED800458960 /* QuestionsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAction.swift; sourceTree = "<group>"; };
+		919E093725A68F1400458960 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		919E093C25A68F2400458960 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		919E094825A68FBC00458960 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		919E095325A6900B00458960 /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +131,17 @@
 		910AD27125A60E200051FC98 /* Trivial iOS */ = {
 			isa = PBXGroup;
 			children = (
+				919E094425A68F8F00458960 /* Modules */,
+				9126235425A684C8007332CF /* APIService */,
+				9126234425A683BF007332CF /* Model */,
+				9126233B25A68199007332CF /* Redux */,
+				910AD2AE25A653F60051FC98 /* Util */,
+				910AD2A025A60F3F0051FC98 /* Brand */,
 				910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */,
-				910AD27425A60E200051FC98 /* ContentView.swift */,
 				910AD27625A60E220051FC98 /* Assets.xcassets */,
 				910AD27B25A60E220051FC98 /* Info.plist */,
 				910AD27825A60E220051FC98 /* Preview Content */,
+				9126235F25A68703007332CF /* GameViewModel.swift */,
 			);
 			path = "Trivial iOS";
 			sourceTree = "<group>";
@@ -128,6 +170,66 @@
 				910AD29125A60E230051FC98 /* Info.plist */,
 			);
 			path = "Trivial iOSUITests";
+			sourceTree = "<group>";
+		};
+		910AD2A025A60F3F0051FC98 /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				910AD2A125A60F4D0051FC98 /* BrandFont.swift */,
+				910AD2A925A612BE0051FC98 /* BrandColor.swift */,
+			);
+			path = Brand;
+			sourceTree = "<group>";
+		};
+		910AD2AE25A653F60051FC98 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				910AD2AF25A654050051FC98 /* ViewModifiers.swift */,
+				9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */,
+				9126233025A66298007332CF /* BrandField.swift */,
+				9126233525A67D31007332CF /* BrandButton.swift */,
+				9126236425A68829007332CF /* PublisherExtensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9126233B25A68199007332CF /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				9126233C25A681A3007332CF /* Store.swift */,
+				919E093225A68ED800458960 /* QuestionsAction.swift */,
+				919E093725A68F1400458960 /* Reducer.swift */,
+				919E093C25A68F2400458960 /* Action.swift */,
+				919E095325A6900B00458960 /* LoginAction.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		9126234425A683BF007332CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9126234525A683CF007332CF /* Question.swift */,
+				9126234D25A68415007332CF /* QuestionResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9126235425A684C8007332CF /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				9126235525A684D1007332CF /* Router.swift */,
+				9126235A25A68578007332CF /* ServiceLayer.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		919E094425A68F8F00458960 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				910AD27425A60E200051FC98 /* Login.swift */,
+				919E094825A68FBC00458960 /* Game.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +361,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				910AD27525A60E200051FC98 /* ContentView.swift in Sources */,
+				910AD2A225A60F4D0051FC98 /* BrandFont.swift in Sources */,
+				9126234E25A68415007332CF /* QuestionResponse.swift in Sources */,
+				9126232C25A65BCD007332CF /* BrandRoundedRectangle.swift in Sources */,
+				910AD2AA25A612BE0051FC98 /* BrandColor.swift in Sources */,
+				9126235B25A68578007332CF /* ServiceLayer.swift in Sources */,
+				919E093325A68ED800458960 /* QuestionsAction.swift in Sources */,
+				9126235625A684D1007332CF /* Router.swift in Sources */,
+				9126236025A68703007332CF /* GameViewModel.swift in Sources */,
+				9126233D25A681A3007332CF /* Store.swift in Sources */,
+				919E093D25A68F2400458960 /* Action.swift in Sources */,
+				919E093825A68F1400458960 /* Reducer.swift in Sources */,
+				919E095425A6900B00458960 /* LoginAction.swift in Sources */,
+				910AD27525A60E200051FC98 /* Login.swift in Sources */,
+				9126234625A683CF007332CF /* Question.swift in Sources */,
 				910AD27325A60E200051FC98 /* Trivial_iOSApp.swift in Sources */,
+				919E094925A68FBC00458960 /* Game.swift in Sources */,
+				910AD2B025A654050051FC98 /* ViewModifiers.swift in Sources */,
+				9126233125A66298007332CF /* BrandField.swift in Sources */,
+				9126233625A67D31007332CF /* BrandButton.swift in Sources */,
+				9126236525A68829007332CF /* PublisherExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

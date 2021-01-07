@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+let store = Store(reducer: reducer)
+
 @main
 struct Trivial_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Login().environmentObject(store)
         }
     }
+}
+
+
+enum currentView {
+  case Login
+  case Game
+  case EndGame
 }
