@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct Game: View {
+  @EnvironmentObject var store: Store
+  
+
+  
+  var padding: CGFloat = 60
+  
+  var body: some View {
+    
+    EmptyView()
+  }
+
+}

@@ -12,8 +12,8 @@ struct SetLoginAction: Action {
     let userOne: String
     let userTwo: String
   
-    init(questions: (String,String)) {
-      self.userOne = questions.0
-      self.userTwo = questions.1
+    init(users: (String,String)) {
+      self.userOne = users.0
+      self.userTwo = users.1
     }
 }

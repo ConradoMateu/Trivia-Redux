@@ -18,6 +18,7 @@ func reducer(state: AppState, action: Action) -> AppState {
     case let action as SetLoginAction:
       state.userOne = action.userOne
       state.userTwo = action.userTwo
+      state.appState = .game
     default:
       break
   }

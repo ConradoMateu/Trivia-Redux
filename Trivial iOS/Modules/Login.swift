@@ -11,8 +11,8 @@ import SwiftUI
 struct Login: View {
   @EnvironmentObject var store: Store
   
-  @State var userOn: String = ""
-  @State var userTw: String = ""
+  @State var userOne: String = ""
+  @State var userTwo: String = ""
   
   var padding: CGFloat = 60
   
@@ -28,15 +28,17 @@ struct Login: View {
           VStack(alignment: .leading){
             Text("Nickname User 1")
               .foregroundColor(.brand_white)
-            BrandTextField(text: self.$userOn)
+            BrandTextField(text: self.$userOne)
           }
           VStack(alignment: .leading){
             Text("Nickname User 2")
               .foregroundColor(.brand_white)
-            BrandTextField(text: self.$userTw)
+            BrandTextField(text: self.$userTwo)
           }
           Spacer()
-          BrandButton(text: "Enter", textColor: .brand_white, backgroundColor: .brand_green, action: {print("")})
+          BrandButton(text: "Enter", textColor: .brand_white, backgroundColor: .brand_green, action: {
+              self.store.dispatch(action: SetLoginAction(users: (userOne,userTwo)))
+          })
         }
         .padding()
         .frame(minHeight: 0, idealHeight: 100, maxHeight: 400)
