@@ -8,12 +8,12 @@
 import Foundation
 
 struct Question: Codable {
-  let incorrect_answers: [String]?
-  let correct_answer: String?
-  let type: String?
-  let category: String?
-  let difficulty: String?
-  let question: String?
+  let incorrect_answers: [String]
+  let correct_answer: String
+  let type: String
+  let category: String
+  let difficulty: String
+  let question: String
 
   enum CodingKeys: String, CodingKey {
     case incorrect_answers
@@ -24,5 +24,11 @@ struct Question: Codable {
     case question
   }
 
+}
+
+extension Question {
+  static var empty: Question {
+  Question(incorrect_answers: [], correct_answer: "", type: "", category: "", difficulty: "", question: "")
+  }
 }
 

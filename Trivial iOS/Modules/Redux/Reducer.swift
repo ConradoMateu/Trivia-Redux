@@ -6,22 +6,20 @@
 //
 
 import Foundation
+import Combine
+typealias Reducer<State, Action> = (inout State, Action) -> Void
 
-func reducer(state: AppState, action: Action) -> AppState {
-  var state = state
-  
-  switch action {
-    case _ as IncrementAction:
-      state.counter += 1
-    case let action as SetQuestionsAction:
-      state.questions = action.questions
-    case let action as SetLoginAction:
-      state.userOne = action.userOne
-      state.userTwo = action.userTwo
-      state.appState = .game
-    default:
-      break
-  }
-  
-  return state
+func appReducer(state: inout AppState, action: AppAction) -> Void {
+    switch(action) {
+
+    case .login(let action):
+        loginReducer(state: &state.login, action: action)
+
+    case .settings(let action):
+        settingsReducer(state: &state.settings, action: action)
+    case.game(let action):
+      gameReducer(state: &state.game, action: action)
+        
+    }
 }
+

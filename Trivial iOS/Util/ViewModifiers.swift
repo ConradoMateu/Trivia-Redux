@@ -18,8 +18,6 @@ struct BackgroundConfig: ViewModifier {
     }
 }
 
-
-
 extension View {
     func backgroundConfig() -> some View {
         modifier(BackgroundConfig())

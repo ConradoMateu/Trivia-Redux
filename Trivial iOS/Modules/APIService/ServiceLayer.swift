@@ -25,14 +25,17 @@ class ServiceLayer {
   
   func run<T: Decodable>(_ router: Router, params:  [String:Any]? = nil) -> AnyPublisher<T, ApiError> {
     let request = assembleURLRequest(router: router, parameters: params)
-    return URLSession.shared.dataTaskPublisher(for: request!)
+     return URLSession.shared.dataTaskPublisher(for: request!)
       .tryMap { data, response in
         guard let httpResponse = response as? HTTPURLResponse else {
+          print("KO1")
           throw ApiError.invalidResponse
         }
         guard httpResponse.statusCode == 200 else {
+          print("KO")
           throw ApiError.statusCode(httpResponse.statusCode)
         }
+        print("OK")
         return data
       }
       .decode(type:T.self, decoder: JSONDecoder())

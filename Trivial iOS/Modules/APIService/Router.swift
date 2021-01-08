@@ -28,7 +28,7 @@ enum Router: Equatable {
   var path: String {
     switch self {
     case .questions:
-      return "api.php"
+      return "/api.php"
       
     }
   }
@@ -37,7 +37,7 @@ enum Router: Equatable {
     switch self {
     case .questions:
       return [URLQueryItem(name: "type", value: "multiple"),
-              URLQueryItem(name: "amount", value: "10"),
+              URLQueryItem(name: "amount", value: CONSTANTS.MAX_QUESTIONS_IN_CHACHE),
               URLQueryItem(name: "language", value: "en-US")]
     }
   }

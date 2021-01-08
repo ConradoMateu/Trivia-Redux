@@ -6,36 +6,33 @@
 //
 
 import SwiftUI
-
-let store = Store(reducer: reducer)
+import Combine
 
 @main
 struct Trivial_iOSApp: App {
-  @State var appState: currentView = .login
-    var body: some Scene {
-      
-        WindowGroup {
-          VStack{
-            switch appState{
-            case .login:
-              Login().environmentObject(store)
-            case .game:
-              Text("dasdsa").foregroundColor(Color.white)
-            case .endGame:
-              EmptyView()
-            }
-          }.onReceive(store.objectWillChange, perform: {
-              print("AppState \(store.state.appState)")
-            DispatchQueue.main.async {
-              self.appState = store.state.appState
-            }
-          })
-        }
+  
+  private  let store = AppStore(initialState: .init(
+                                  settings: SettingsState(),
+                                  game: GameState(), login: LoginState()),
+                                reducer: appReducer,
+                                middlewares: [
+                                  gameMiddleware(gameStore: GameStore()),
+                                  loginMiddleware(loginStore: LoginStore()),
+                                  settingsMiddleware(appSettings: AppSettingsStore())
+                                ]
+  )
+  
+  
+  var body: some Scene {
+    
+    WindowGroup {
+      ContentView().environmentObject(store)
     }
+  }
 }
 
 
-enum currentView {
+enum currentView: String, Codable {
   case login
   case game
   case endGame

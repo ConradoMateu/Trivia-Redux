@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct Login: View {
-  @EnvironmentObject var store: Store
+  @EnvironmentObject var store: AppStore
   
   @ObservedObject var viewModel:LoginViewModel = LoginViewModel()
   @State var isButtonDisabled = true
@@ -40,13 +40,16 @@ struct Login: View {
           }
           Spacer()
           BrandButton(text: "Enter", textColor: .brand_white, backgroundColor: .brand_green, action: {
-            self.store.dispatch(action: SetLoginAction(users: (viewModel.userOne,viewModel.userTwo)))
+            self.store.dispatch(AppAction.login(action: .save(userOne: viewModel.userOne, userTwo: viewModel.userTwo)))
+            self.store.dispatch(AppAction.settings(action: .changeRoot(toView: .game)))
           }).disabled(isButtonDisabled)
+          .opacity(isButtonDisabled ? 0.4 : 1)
         }
         .padding()
         .frame(minHeight: 0, idealHeight: 100, maxHeight: 400)
         
-      }.background(RoundedRectangle(cornerRadius: 10).foregroundColor(.brand_blue))
+      }.background(RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.brand_blue))
       .padding([.leading,.trailing], 20)
       .padding(.top,-padding)
       Spacer()
@@ -56,8 +59,8 @@ struct Login: View {
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    Login().environmentObject(Store(reducer: reducer))
-  }
-}
+//struct ContentView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    Login().environmentObject(Store(reducer: reducer, state: .init()))
+//  }
+//}
