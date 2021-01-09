@@ -10,9 +10,8 @@ import Combine
 
 protocol GameStoreProtocol {
   var currentQuestion: Question {get set}
-  var currentScorePlayerOne: Int {get set}
-  var currentScorePlayerTwo: Int {get set}
-  var currentGameTurn:Player {get set}
+  var playerOne: Player {get set}
+  var playerTwo: Player {get set}
   func fetch() -> AnyPublisher<[Question], ApiError>
   func next(question: Question) -> Void
   func reset() -> Void
@@ -23,17 +22,15 @@ final class GameStore: GameStoreProtocol {
   
   var cancellables = [AnyCancellable]()
   
-  @Storage(key: AppSettingsKeys.currentGameTurn.rawValue, defaultValue: .one)
-  var currentGameTurn: Player
+  @Storage(key: AppSettingsKeys.playerOne.rawValue, defaultValue: Player.empty)
+  var playerOne: Player
+  
+  @Storage(key: AppSettingsKeys.playerTwo.rawValue, defaultValue: Player.empty)
+  var playerTwo: Player
   
   @Storage(key: AppSettingsKeys.currentQuestion.rawValue, defaultValue: Question.empty)
   var currentQuestion: Question
   
-  @Storage(key: AppSettingsKeys.scoreUserOne.rawValue, defaultValue: 0)
-  var currentScorePlayerOne: Int
-  
-  @Storage(key: AppSettingsKeys.scoreUserTwo.rawValue, defaultValue: 0)
-  var currentScorePlayerTwo: Int
   
   func getQuestions()  -> AnyPublisher<QuestionResponse, ApiError>{
     return ServiceLayer.shared.run(Router.questions)
@@ -52,20 +49,19 @@ final class GameStore: GameStoreProtocol {
   }
   
   private func incrementScore() {
-    switch currentGameTurn {
-    case .one:
-      currentScorePlayerOne = 1 + currentScorePlayerOne
-    case .two:
-      currentScorePlayerTwo = 1 + currentScorePlayerTwo
-    }
+    if playerOne.isCurrentTurn {
+    playerOne.score = playerOne.score + 1
+  }else {
+    playerTwo.score = playerTwo.score + 1
   }
   
-  private func switchTurn() {
-    switch currentGameTurn {
-    case .one:
-      currentGameTurn = .two
-    case .two:
-      currentGameTurn = .one
+  func switchTurn() {
+    if playerOne.isCurrentTurn{
+      playerOne.isCurrentTurn = false
+      playerTwo.isCurrentTurn = true
+    }else {
+      playerOne.isCurrentTurn = true
+      playerTwo.isCurrentTurn = false
     }
   }
   
@@ -82,16 +78,10 @@ final class GameStore: GameStoreProtocol {
   }
   
   func reset() {
-    currentGameTurn = .one
+    playerOne = Player.empty
+    playerTwo = Player.empty
     currentQuestion = Question.empty
-    currentScorePlayerOne = 0
-    currentScorePlayerTwo = 0
   }
   
 }
 
-
-enum Player: String, Codable {
-  case one
-  case two
-}

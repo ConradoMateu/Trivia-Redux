@@ -10,9 +10,9 @@ import Foundation
 func loginReducer(state: inout LoginStateProtocol, action: LoginAction) -> Void {
     switch action {
 
-    case .save(let userOne,let userTwo):
-      state.userOne = userOne
-      state.userTwo = userTwo
+    case .save(let playerOne,let playerTwo):
+      state.playerOne = playerOne
+      state.playerTwo = playerTwo
 
     }
 

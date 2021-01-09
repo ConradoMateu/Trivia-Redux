@@ -8,5 +8,5 @@
 import Foundation
 
 enum LoginAction {
-  case save(userOne: String, userTwo: String)
+  case save(playerOne: Player, playerTwo: Player)
 }

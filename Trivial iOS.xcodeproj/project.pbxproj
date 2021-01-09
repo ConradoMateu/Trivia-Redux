@@ -53,6 +53,8 @@
 		918521E225A89616006F212F /* logMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521E125A89615006F212F /* logMiddleware.swift */; };
 		918521E825A8AF33006F212F /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521E725A8AF33006F212F /* ServiceLocator.swift */; };
 		918521EE25A91921006F212F /* InitialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521ED25A91921006F212F /* InitialState.swift */; };
+		918521F625A9D5DE006F212F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521F525A9D5DD006F212F /* Player.swift */; };
+		9185220425A9D72A006F212F /* BrandPlayerCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185220325A9D72A006F212F /* BrandPlayerCounter.swift */; };
 		919E093325A68ED800458960 /* QuestionsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093225A68ED800458960 /* QuestionsAction.swift */; };
 		919E093825A68F1400458960 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093725A68F1400458960 /* Reducer.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +129,8 @@
 		918521E125A89615006F212F /* logMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logMiddleware.swift; sourceTree = "<group>"; };
 		918521E725A8AF33006F212F /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		918521ED25A91921006F212F /* InitialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialState.swift; sourceTree = "<group>"; };
+		918521F525A9D5DD006F212F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9185220325A9D72A006F212F /* BrandPlayerCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPlayerCounter.swift; sourceTree = "<group>"; };
 		919E093225A68ED800458960 /* QuestionsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAction.swift; sourceTree = "<group>"; };
 		919E093725A68F1400458960 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +265,7 @@
 			children = (
 				9126234525A683CF007332CF /* Question.swift */,
 				9126234D25A68415007332CF /* QuestionResponse.swift */,
+				918521F525A9D5DD006F212F /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				9126233525A67D31007332CF /* BrandButton.swift */,
 				9126233025A66298007332CF /* BrandField.swift */,
 				9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */,
+				9185220325A9D72A006F212F /* BrandPlayerCounter.swift */,
 			);
 			path = BrandViews;
 			sourceTree = "<group>";
@@ -536,6 +542,7 @@
 				9126235B25A68578007332CF /* ServiceLayer.swift in Sources */,
 				9173BF8A25A77FA100FCD5D4 /* Validation+SwiftUI.swift in Sources */,
 				919E093325A68ED800458960 /* QuestionsAction.swift in Sources */,
+				9185220425A9D72A006F212F /* BrandPlayerCounter.swift in Sources */,
 				918521A425A7D7BD006F212F /* SettingsReducer.swift in Sources */,
 				918521C325A86A59006F212F /* GameStore.swift in Sources */,
 				918521E825A8AF33006F212F /* ServiceLocator.swift in Sources */,
@@ -564,6 +571,7 @@
 				9126233125A66298007332CF /* BrandField.swift in Sources */,
 				9126233625A67D31007332CF /* BrandButton.swift in Sources */,
 				9126236525A68829007332CF /* PublisherExtensions.swift in Sources */,
+				918521F625A9D5DE006F212F /* Player.swift in Sources */,
 				9173BF7325A77A9B00FCD5D4 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
