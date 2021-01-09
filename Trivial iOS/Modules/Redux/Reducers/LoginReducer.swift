@@ -7,7 +7,7 @@
 
 import Foundation
 
-func loginReducer(state: inout LoginState, action: LoginAction) -> Void {
+func loginReducer(state: inout LoginStateProtocol, action: LoginAction) -> Void {
     switch action {
 
     case .save(let userOne,let userTwo):

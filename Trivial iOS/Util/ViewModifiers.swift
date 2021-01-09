@@ -18,10 +18,28 @@ struct BackgroundConfig: ViewModifier {
     }
 }
 
+struct BrandProgressViewStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+          .padding(20)
+          .background(RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.brand_blue))
+          .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+          .foregroundColor(.brand_white)
+          .scaleEffect(1.5)
+    }
+}
+
 extension View {
     func backgroundConfig() -> some View {
         modifier(BackgroundConfig())
     }
+}
+
+extension ProgressView{
+  func brandStyle() -> some View {
+      modifier(BrandProgressViewStyle())
+  }
 }
 
 

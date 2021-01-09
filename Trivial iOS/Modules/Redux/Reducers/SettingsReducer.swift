@@ -7,7 +7,7 @@
 
 import Foundation
 
-func settingsReducer(state: inout SettingsState, action: SettingsAction) -> Void {
+func settingsReducer(state: inout SettingsStateProtocol, action: SettingsAction) -> Void {
   
   switch action {
   

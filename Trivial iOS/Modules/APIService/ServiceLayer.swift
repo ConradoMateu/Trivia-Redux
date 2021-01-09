@@ -28,14 +28,11 @@ class ServiceLayer {
      return URLSession.shared.dataTaskPublisher(for: request!)
       .tryMap { data, response in
         guard let httpResponse = response as? HTTPURLResponse else {
-          print("KO1")
           throw ApiError.invalidResponse
         }
         guard httpResponse.statusCode == 200 else {
-          print("KO")
           throw ApiError.statusCode(httpResponse.statusCode)
         }
-        print("OK")
         return data
       }
       .decode(type:T.self, decoder: JSONDecoder())
@@ -69,9 +66,9 @@ class ServiceLayer {
     return urlRequest
   }
   
-  deinit {
-    _ = cancellableSet.map{$0.cancel()}
-  }
+//  deinit {
+//    _ = cancellableSet.map{$0.cancel()}
+//  }
   
 }
 

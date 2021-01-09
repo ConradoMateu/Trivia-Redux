@@ -11,22 +11,12 @@ import Combine
 @main
 struct Trivial_iOSApp: App {
   
-  private  let store = AppStore(initialState: .init(
-                                  settings: SettingsState(),
-                                  game: GameState(), login: LoginState()),
-                                reducer: appReducer,
-                                middlewares: [
-                                  gameMiddleware(gameStore: GameStore()),
-                                  loginMiddleware(loginStore: LoginStore()),
-                                  settingsMiddleware(appSettings: AppSettingsStore())
-                                ]
-  )
-  
+
   
   var body: some Scene {
     
     WindowGroup {
-      ContentView().environmentObject(store)
+      ContentView().environmentObject(StoreGenerator.initialState)
     }
   }
 }

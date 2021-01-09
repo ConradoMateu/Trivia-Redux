@@ -16,8 +16,10 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
     switch action {
     
     case .game(action: .fetch):
-      return gameStore.fetch()
-      .map { AppAction.game(action: .fetchComplete(questions: $0 )) }
+      return gameStore.fetch().subscribe(on: DispatchQueue.main)
+      .map {
+          AppAction.game(action: .fetchComplete(questions: $0 ))
+      }
       .catch { (error: ApiError) -> Just<AppAction> in
           switch(error) {
           case .invalidResponse:
@@ -30,7 +32,7 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
               return Just(AppAction.game(action: .fetchError(error: ApiError.unknown(error))))
           }
       }
-      .eraseToAnyPublisher()
+        .eraseToAnyPublisher()
     case .game(action: .gameEnded):
       newStore.reset()
     case .game(action: .next(let question)):

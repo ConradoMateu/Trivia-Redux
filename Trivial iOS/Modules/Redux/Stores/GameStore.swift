@@ -13,15 +13,15 @@ protocol GameStoreProtocol {
   var currentScorePlayerOne: Int {get set}
   var currentScorePlayerTwo: Int {get set}
   var currentGameTurn:Player {get set}
-  
   func fetch() -> AnyPublisher<[Question], ApiError>
-  mutating func next(question: Question) -> Void
-  mutating func reset() -> Void
-  mutating func check(answer: String)
+  func next(question: Question) -> Void
+  func reset() -> Void
+  func check(answer: String)
 }
 
-struct GameStore: GameStoreProtocol {
+final class GameStore: GameStoreProtocol {
   
+  var cancellables = [AnyCancellable]()
   
   @Storage(key: AppSettingsKeys.currentGameTurn.rawValue, defaultValue: .one)
   var currentGameTurn: Player
@@ -35,22 +35,23 @@ struct GameStore: GameStoreProtocol {
   @Storage(key: AppSettingsKeys.scoreUserTwo.rawValue, defaultValue: 0)
   var currentScorePlayerTwo: Int
   
-   func getQuestions()  -> AnyPublisher<QuestionResponse, ApiError>{
-      return ServiceLayer.shared.run(Router.questions)
-    }
+  func getQuestions()  -> AnyPublisher<QuestionResponse, ApiError>{
+    return ServiceLayer.shared.run(Router.questions)
+  }
   
   func fetch() -> AnyPublisher<[Question], ApiError> {
     return Future<[Question], ApiError> { promise in
       self.getQuestions().on(success: {
           promise(.success($0.results))
       }, failure: {
-          promise(.failure($0))
-      })
-    }
+        promise(.failure($0))
+      }).store(in: &self.cancellables)
+    }.subscribe(on: DispatchQueue.main)
+    
     .eraseToAnyPublisher()
   }
   
-  private mutating func incrementScore() {
+  private func incrementScore() {
     switch currentGameTurn {
     case .one:
       currentScorePlayerOne = 1 + currentScorePlayerOne
@@ -59,7 +60,7 @@ struct GameStore: GameStoreProtocol {
     }
   }
   
-  private mutating func switchTurn() {
+  private func switchTurn() {
     switch currentGameTurn {
     case .one:
       currentGameTurn = .two
@@ -67,20 +68,20 @@ struct GameStore: GameStoreProtocol {
       currentGameTurn = .one
     }
   }
-
   
-  mutating func check(answer: String) {
+  
+  func check(answer: String) {
     if currentQuestion.correct_answer == answer {
       incrementScore()
     }
   }
   
-  mutating func next(question: Question) {
+  func next(question: Question) {
     currentQuestion = question
     switchTurn()
   }
   
-  mutating func reset() {
+  func reset() {
     currentGameTurn = .one
     currentQuestion = Question.empty
     currentScorePlayerOne = 0
