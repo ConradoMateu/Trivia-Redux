@@ -35,8 +35,6 @@ func gameReducer(state: inout GameStateProtocol, action: GameAction) -> Void {
       state.playerOne = playerOne
       state.playerTwo = playerTwo
     case .checkedAnswer(let isCorrectAnswer):
-//      state.playerOne.isCurrentTurn = !state.playerOne.isCurrentTurn
-//      state.playerTwo.isCurrentTurn = !state.playerTwo.isCurrentTurn
       state.isCorrectAnswer.send(isCorrectAnswer)
       
     case .refreshGame(let playerOne, let playerTwo):

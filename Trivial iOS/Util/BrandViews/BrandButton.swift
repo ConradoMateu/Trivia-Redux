@@ -12,7 +12,17 @@ struct BrandButton: View {
   var text: String
   var textColor: Color
   var backgroundColor: Color
+  var isDisabled: Bool
   var action: () -> ()
+  
+  init(text: String, textColor: Color, backgroundColor: Color,isDisabled: Bool = false,action: @escaping () -> ()) {
+    self.text = text
+    self.textColor = textColor
+    self.backgroundColor = backgroundColor
+    self.isDisabled = isDisabled
+    self.action = action
+  }
+ 
   
   var body: some View {
     Button(action: {
@@ -24,7 +34,7 @@ struct BrandButton: View {
         .foregroundColor(textColor).background(RoundedRectangle(cornerRadius: 10)
                                                 .foregroundColor(backgroundColor))
       
-    })
+    }).disabled(isDisabled)
   }
 }
 
