@@ -14,15 +14,34 @@ func gameReducer(state: inout GameStateProtocol, action: GameAction) -> Void {
     case .fetchComplete(let questions):
       state.fetching = false
       state.questions = questions
-      state.nextQuestion.send(questions.first!)
       state.currentQuestion = 0
-    case .next(let question):
-      state.nextQuestion.send(question)
+      state.nextQuestion.send(questions.first!)
+      
+    case .next:
+      
+      //Check if there are more questions, is there are no more questions the game should end
+      if state.currentQuestion+1 < state.questions.count{
+        state.currentQuestion = state.currentQuestion + 1
+        state.nextQuestion.send(state.questions[state.currentQuestion])
+      }else{
+        state.endGame.send(true)
+      }
+      
     case .gameEnded:
       state.endGame.send(true)
     case .fetch:
       state.fetching = true
-        
+    case .login(let playerOne, let playerTwo):
+      state.playerOne = playerOne
+      state.playerTwo = playerTwo
+    case .checkedAnswer(let isCorrectAnswer):
+//      state.playerOne.isCurrentTurn = !state.playerOne.isCurrentTurn
+//      state.playerTwo.isCurrentTurn = !state.playerTwo.isCurrentTurn
+      state.isCorrectAnswer.send(isCorrectAnswer)
+      
+    case .refreshGame(let playerOne, let playerTwo):
+      state.playerOne = playerOne
+      state.playerTwo = playerTwo
     default:
         break
     }

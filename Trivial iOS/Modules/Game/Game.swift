@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Game: View {
   @EnvironmentObject var store: AppStore
-  
+  @ObservedObject var viewModel: GameViewModel = GameViewModel()
   var currentQuestion: Question {
     if !store.state.game.questions.isEmpty{
       return store.state.game.questions[store.state.game.currentQuestion]
@@ -20,36 +20,16 @@ struct Game: View {
   }
     var body: some View {
       VStack{
-//        if store.state.game.fetching {
-//        ProgressView("Loading...").brandStyle()
-//        }else{
+        if store.state.game.fetching {
+        ProgressView("Loading...").brandStyle()
+        }else{
         Spacer()
         HStack{
-          HStack{
-            Image("avatar-female")
-              .resizable()
-              .frame(width: 50, height: 50)
-              .foregroundColor(.brand_white)
-            VStack{
-//              Text(store.state.login.userOne)
-              Text("Player 1")
-              Text("Score: 5")
-            }
-          }.padding().background(RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.brand_blue))
+          BrandPlayerCounter(player: store.state.game.playerOne)
+            .offset(x: store.state.game.playerOne.isCurrentTurn ? 5 : 0, y: 0)
           Spacer()
-          HStack{
-            Image("avatar-female")
-              .resizable()
-              .frame(width: 50, height: 50)
-              .foregroundColor(.brand_white)
-            VStack{
-//              Text(store.state.login.userOne)
-              Text("Player 2")
-              Text("Score: 5")
-            }
-          }.padding().background(RoundedRectangle(cornerRadius: 10)
-                                  .foregroundColor(.brand_green)).scaleEffect(1.05).offset(x: -5.0, y: 0)
+          BrandPlayerCounter(player: store.state.game.playerTwo)
+            .offset(x: store.state.game.playerTwo.isCurrentTurn ? -5 : 0, y: 0)
         }
         
         Spacer()
@@ -61,19 +41,33 @@ struct Game: View {
             .background(RoundedRectangle(cornerRadius: 10)
                           .foregroundColor(.brand_blue))
             .padding(.bottom,20)
-          BrandButton(text: currentQuestion.correct_answer, textColor: .brand_white, backgroundColor: .brand_blue, action: {})
-          BrandButton(text: currentQuestion.correct_answer, textColor: .brand_white, backgroundColor: .brand_blue, action: {})
-          BrandButton(text: currentQuestion.correct_answer, textColor: .brand_white, backgroundColor: .brand_blue, action: {})
-          BrandButton(text: currentQuestion.correct_answer, textColor: .brand_white, backgroundColor: .brand_blue, action: {})
+          
+          ForEach(currentQuestion.shuffledAnswers, id: \.self) { item in
+            Group{
+              BrandButton(text: item, textColor: .brand_white, backgroundColor: .brand_blue, action: {
+              self.store.dispatch(.game(action: .check(answer: item)))
+                self.store.dispatch(.game(action: .next))
+            }).onReceive(store.state.game.isCorrectAnswer, perform: { isCorrect in
+              print("is Corret \(isCorrect)")
+              
+            })
+            }
+          }
+        }
+          Spacer()
         }
         
-//        }
-        Spacer()
         
       }.padding([.leading,.trailing],10).backgroundConfig()
       .onAppear(){
         self.store.dispatch(.game(action: .fetch))
-      }
+      }.onReceive(self.store.state.game.nextQuestion, perform: { newQuestion in
+        print(newQuestion.flattenedAnswers)
+        self.store.dispatch(.game(action: .save(currentQuestion: newQuestion)))
+        viewModel.refresh(question: newQuestion)
+        
+        print(viewModel.answers.debugDescription)
+      })
     }
 }
 

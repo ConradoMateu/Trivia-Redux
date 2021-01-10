@@ -30,5 +30,14 @@ extension Question {
   static var empty: Question {
   Question(incorrect_answers: [], correct_answer: "", type: "", category: "", difficulty: "", question: "")
   }
+  
+  var flattenedAnswers: [String] {
+    return [self.correct_answer] + self.incorrect_answers
+  }
+  
+  var shuffledAnswers: [String] {
+    return self.flattenedAnswers.shuffled()
+  }
+
 }
 

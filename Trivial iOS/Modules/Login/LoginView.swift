@@ -40,8 +40,7 @@ struct Login: View {
           }
           Spacer()
           BrandButton(text: "Enter", textColor: .brand_white, backgroundColor: .brand_green, action: {
-            self.store.dispatch(AppAction.login(action: .save(userOne: viewModel.userOne, userTwo: viewModel.userTwo)))
-            self.store.dispatch(AppAction.settings(action: .changeRoot(toView: .game)))
+            login()
           }).disabled(isButtonDisabled)
           .opacity(isButtonDisabled ? 0.4 : 1)
         }
@@ -57,10 +56,15 @@ struct Login: View {
     .onReceive(viewModel.allValidation, perform: {validation in self.isButtonDisabled = !validation.isSuccess})
     
   }
+  
+  func login() {
+    self.store.dispatch(AppAction.game(action: .login(playerOne: Player.generate(name: viewModel.userOne, currentTurn: true), playerTwo: Player.generate(name: viewModel.userTwo, currentTurn: false))))
+    self.store.dispatch(AppAction.settings(action: .changeRoot(toView: .game)))
+  }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    Login().environmentObject(Store(reducer: reducer, state: .init()))
-//  }
-//}
+struct ContentView_Previews: PreviewProvider {
+  static var previews: some View {
+    Login().environmentObject(StoreGenerator.initialState)
+  }
+}

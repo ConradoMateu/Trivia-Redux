@@ -11,7 +11,11 @@ enum GameAction {
   case fetch
   case fetchComplete(questions: [Question])
   case fetchError(error: ApiError)
-  case next(question: Question)
+  case next
+  case login(playerOne: Player, playerTwo: Player)
+  case save(currentQuestion: Question)
   case gameEnded
   case check(answer: String)
+  case checkedAnswer(isCorrect: Bool)
+  case refreshGame(playerOne: Player, playerTwo: Player)
 }

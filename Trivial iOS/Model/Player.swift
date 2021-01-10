@@ -33,11 +33,11 @@ extension Player{
            avatarImage: randomAvatar,
            isCurrentTurn: false)
   }
-  static func generate(name: String) -> Player {
+  static func generate(name: String, currentTurn: Bool) -> Player {
     return Player(name: name,
                   score: 0,
                   avatarImage: randomAvatar,
-                  isCurrentTurn: false)
+                  isCurrentTurn: currentTurn)
   }
   
 }

@@ -38,11 +38,8 @@
 		9185217025A7C87C006F212F /* GameAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185216F25A7C87C006F212F /* GameAction.swift */; };
 		9185217525A7C925006F212F /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185217425A7C925006F212F /* LoginAction.swift */; };
 		9185217A25A7C972006F212F /* SettingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185217925A7C972006F212F /* SettingsAction.swift */; };
-		9185218425A7D131006F212F /* LoginMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185218325A7D131006F212F /* LoginMiddleware.swift */; };
-		9185219F25A7D769006F212F /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185219E25A7D769006F212F /* LoginReducer.swift */; };
 		918521A425A7D7BD006F212F /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521A325A7D7BD006F212F /* SettingsReducer.swift */; };
 		918521A925A7D93E006F212F /* settingsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521A825A7D93E006F212F /* settingsMiddleware.swift */; };
-		918521B425A7DFE6006F212F /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521B325A7DFE6006F212F /* LoginStore.swift */; };
 		918521B925A7E09F006F212F /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521B825A7E09F006F212F /* SettingsStore.swift */; };
 		918521BE25A86A2C006F212F /* GameMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521BD25A86A2C006F212F /* GameMiddleware.swift */; };
 		918521C325A86A59006F212F /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918521C225A86A59006F212F /* GameStore.swift */; };
@@ -114,11 +111,8 @@
 		9185216F25A7C87C006F212F /* GameAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAction.swift; sourceTree = "<group>"; };
 		9185217425A7C925006F212F /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
 		9185217925A7C972006F212F /* SettingsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAction.swift; sourceTree = "<group>"; };
-		9185218325A7D131006F212F /* LoginMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMiddleware.swift; sourceTree = "<group>"; };
-		9185219E25A7D769006F212F /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
 		918521A325A7D7BD006F212F /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		918521A825A7D93E006F212F /* settingsMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsMiddleware.swift; sourceTree = "<group>"; };
-		918521B325A7DFE6006F212F /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
 		918521B825A7E09F006F212F /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		918521BD25A86A2C006F212F /* GameMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMiddleware.swift; sourceTree = "<group>"; };
 		918521C225A86A59006F212F /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
@@ -191,7 +185,6 @@
 				910AD27625A60E220051FC98 /* Assets.xcassets */,
 				910AD27B25A60E220051FC98 /* Info.plist */,
 				910AD27825A60E220051FC98 /* Preview Content */,
-				9126235F25A68703007332CF /* GameViewModel.swift */,
 			);
 			path = "Trivial iOS";
 			sourceTree = "<group>";
@@ -314,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				9185214925A78FBC006F212F /* Game.swift */,
+				9126235F25A68703007332CF /* GameViewModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -341,7 +335,6 @@
 		9185218225A7D11E006F212F /* Middlewares */ = {
 			isa = PBXGroup;
 			children = (
-				9185218325A7D131006F212F /* LoginMiddleware.swift */,
 				918521A825A7D93E006F212F /* settingsMiddleware.swift */,
 				918521BD25A86A2C006F212F /* GameMiddleware.swift */,
 				918521E125A89615006F212F /* logMiddleware.swift */,
@@ -352,7 +345,6 @@
 		9185218E25A7D413006F212F /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				918521B325A7DFE6006F212F /* LoginStore.swift */,
 				918521B825A7E09F006F212F /* SettingsStore.swift */,
 				918521C225A86A59006F212F /* GameStore.swift */,
 				918521C725A86B7B006F212F /* CodingKeys.swift */,
@@ -364,7 +356,6 @@
 		9185219725A7D75E006F212F /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
-				9185219E25A7D769006F212F /* LoginReducer.swift */,
 				918521A325A7D7BD006F212F /* SettingsReducer.swift */,
 				918521DC25A885A1006F212F /* GameReducer.swift */,
 			);
@@ -535,9 +526,7 @@
 				918521B925A7E09F006F212F /* SettingsStore.swift in Sources */,
 				918521DD25A885A1006F212F /* GameReducer.swift in Sources */,
 				9185214A25A78FBC006F212F /* Game.swift in Sources */,
-				9185218425A7D131006F212F /* LoginMiddleware.swift in Sources */,
 				9126232C25A65BCD007332CF /* BrandRoundedRectangle.swift in Sources */,
-				918521B425A7DFE6006F212F /* LoginStore.swift in Sources */,
 				910AD2AA25A612BE0051FC98 /* BrandColor.swift in Sources */,
 				9126235B25A68578007332CF /* ServiceLayer.swift in Sources */,
 				9173BF8A25A77FA100FCD5D4 /* Validation+SwiftUI.swift in Sources */,
@@ -550,7 +539,6 @@
 				9185217525A7C925006F212F /* LoginAction.swift in Sources */,
 				918521EE25A91921006F212F /* InitialState.swift in Sources */,
 				918521A925A7D93E006F212F /* settingsMiddleware.swift in Sources */,
-				9185219F25A7D769006F212F /* LoginReducer.swift in Sources */,
 				9185217A25A7C972006F212F /* SettingsAction.swift in Sources */,
 				918521CD25A86CA8006F212F /* PropertyWrapper.swift in Sources */,
 				9185215C25A7C56C006F212F /* ContentView.swift in Sources */,

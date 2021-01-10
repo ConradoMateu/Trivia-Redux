@@ -13,7 +13,7 @@ class LoginViewModel: ObservableObject{
   
   @Published var userOne: String = ""
   @Published var userTwo: String = ""
-  
+
   lazy var userOneValidation: ValidationPublisher = {
       $userOne.nonEmptyValidator("Name of User One must be provided")
   }()
@@ -37,5 +37,6 @@ class LoginViewModel: ObservableObject{
           return [v1, v2, v3].allSatisfy { $0.isSuccess } ? .success : .failure(message: "")
       }.eraseToAnyPublisher()
   }()
+
 }
 

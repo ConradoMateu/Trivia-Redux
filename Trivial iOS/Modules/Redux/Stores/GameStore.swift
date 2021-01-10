@@ -15,7 +15,7 @@ protocol GameStoreProtocol {
   func fetch() -> AnyPublisher<[Question], ApiError>
   func next(question: Question) -> Void
   func reset() -> Void
-  func check(answer: String)
+  func check(answer: String) -> AnyPublisher<Bool, Never>
 }
 
 final class GameStore: GameStoreProtocol {
@@ -39,7 +39,7 @@ final class GameStore: GameStoreProtocol {
   func fetch() -> AnyPublisher<[Question], ApiError> {
     return Future<[Question], ApiError> { promise in
       self.getQuestions().on(success: {
-          promise(.success($0.results))
+        promise(.success($0.results))
       }, failure: {
         promise(.failure($0))
       }).store(in: &self.cancellables)
@@ -47,12 +47,13 @@ final class GameStore: GameStoreProtocol {
     
     .eraseToAnyPublisher()
   }
-  
+
   private func incrementScore() {
     if playerOne.isCurrentTurn {
-    playerOne.score = playerOne.score + 1
-  }else {
-    playerTwo.score = playerTwo.score + 1
+      playerOne.score = playerOne.score + 1
+    }else {
+      playerTwo.score = playerTwo.score + 1
+    }
   }
   
   func switchTurn() {
@@ -66,9 +67,22 @@ final class GameStore: GameStoreProtocol {
   }
   
   
-  func check(answer: String) {
+  func check(answer: String) -> AnyPublisher<Bool, Never> {
     if currentQuestion.correct_answer == answer {
       incrementScore()
+      return Future<Bool, Never> { promise in
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+              promise(.success(true))
+          }
+      }
+      .eraseToAnyPublisher()
+    }else {
+      return Future<Bool, Never> { promise in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+            promise(.success(false))
+        }
+    }
+    .eraseToAnyPublisher()
     }
   }
   

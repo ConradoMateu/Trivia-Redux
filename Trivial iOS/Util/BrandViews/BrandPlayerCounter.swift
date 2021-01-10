@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BrandPlayerCounter: View {
   let player: Player
+  
     var body: some View {
       HStack{
         Image(player.avatarImage)
@@ -16,17 +17,19 @@ struct BrandPlayerCounter: View {
           .frame(width: 50, height: 50)
           .foregroundColor(.brand_white)
         VStack{
-//              Text(store.state.login.userOne)
           Text(player.name)
           Text("Score: \(player.score)")
         }
       }.padding().background(RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.brand_blue))
+                              .foregroundColor(player.isCurrentTurn ? .brand_green : .brand_blue))
+      .scaleEffect(player.isCurrentTurn ? 1.05 : 1)
+      
     }
 }
 
 struct BrandPlayerCounter_Previews: PreviewProvider {
     static var previews: some View {
-      BrandPlayerCounter(player: Player.generate(name: "Player"))
+      BrandPlayerCounter(player: Player.generate(name: "Player", currentTurn: false))
+      BrandPlayerCounter(player: Player.generate(name: "Player", currentTurn: true))
     }
 }

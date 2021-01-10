@@ -8,7 +8,6 @@
 import Foundation
 
 enum AppAction {
-    case login(action: LoginAction)
     case settings(action: SettingsAction)
     case game(action: GameAction)
 }
