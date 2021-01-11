@@ -81,14 +81,6 @@ struct Game: View {
 
       .onAppear(){
         self.store.dispatch(.game(action: .fetch))
-        for family in UIFont.familyNames {
-          let sName: String = family as String
-          print("family: \(sName)")
-
-          for name in UIFont.fontNames(forFamilyName: sName) {
-            print("name: \(name as String)")
-          }
-        }
       }.onReceive(store.state.game.isCorrectAnswer){ isCorrect in
         DispatchQueue.main.async {
           self.store.dispatch(.game(action: .next))

@@ -44,9 +44,6 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
       newStore.playerOne.isCurrentTurn = false
       newStore.playerTwo.isCurrentTurn = false
       return Just(AppAction.settings(action: .changeRoot(toView: .endGame))).eraseToAnyPublisher()
-
-      
-
     case .game(action: .save(let question)):
       newStore.currentQuestion = question
     case .game(action: .check(let answer)):
