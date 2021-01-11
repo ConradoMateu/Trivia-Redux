@@ -62,7 +62,6 @@ struct Game: View {
                 self.store.dispatch(.game(action: .reduce(buttonIdx: i, for: .checked)))
               }
               DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                
                 self.store.dispatch(.game(action: .check(answer: currentAnswers[i])))
               }
             }

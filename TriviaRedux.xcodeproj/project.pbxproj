@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		910AD27325A60E200051FC98 /* Trivial_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */; };
+		910AD27325A60E200051FC98 /* TriviaReduxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27225A60E200051FC98 /* TriviaReduxApp.swift */; };
 		910AD27525A60E200051FC98 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD27425A60E200051FC98 /* LoginView.swift */; };
 		910AD27725A60E220051FC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910AD27625A60E220051FC98 /* Assets.xcassets */; };
 		910AD27A25A60E220051FC98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910AD27925A60E220051FC98 /* Preview Assets.xcassets */; };
-		910AD28525A60E230051FC98 /* Trivial_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28425A60E230051FC98 /* Trivial_iOSTests.swift */; };
-		910AD29025A60E230051FC98 /* Trivial_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28F25A60E230051FC98 /* Trivial_iOSUITests.swift */; };
+		910AD28525A60E230051FC98 /* TrivialReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28425A60E230051FC98 /* TrivialReduxTests.swift */; };
+		910AD29025A60E230051FC98 /* TrivialReduxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD28F25A60E230051FC98 /* TrivialReduxUITests.swift */; };
 		910AD2A225A60F4D0051FC98 /* BrandFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD2A125A60F4D0051FC98 /* BrandFont.swift */; };
 		910AD2AA25A612BE0051FC98 /* BrandColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD2A925A612BE0051FC98 /* BrandColor.swift */; };
 		910AD2B025A654050051FC98 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910AD2AF25A654050051FC98 /* ViewModifiers.swift */; };
@@ -79,17 +79,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		910AD26F25A60E200051FC98 /* Trivial iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivial iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial_iOSApp.swift; sourceTree = "<group>"; };
+		910AD26F25A60E200051FC98 /* TriviaRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriviaRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		910AD27225A60E200051FC98 /* TriviaReduxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaReduxApp.swift; sourceTree = "<group>"; };
 		910AD27425A60E200051FC98 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		910AD27625A60E220051FC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		910AD27925A60E220051FC98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		910AD27B25A60E220051FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		910AD28025A60E230051FC98 /* Trivial iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trivial iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		910AD28425A60E230051FC98 /* Trivial_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial_iOSTests.swift; sourceTree = "<group>"; };
+		910AD28025A60E230051FC98 /* TriviaReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		910AD28425A60E230051FC98 /* TrivialReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrivialReduxTests.swift; sourceTree = "<group>"; };
 		910AD28625A60E230051FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		910AD28B25A60E230051FC98 /* Trivial iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trivial iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		910AD28F25A60E230051FC98 /* Trivial_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivial_iOSUITests.swift; sourceTree = "<group>"; };
+		910AD28B25A60E230051FC98 /* TriviaReduxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaReduxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		910AD28F25A60E230051FC98 /* TrivialReduxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrivialReduxUITests.swift; sourceTree = "<group>"; };
 		910AD29125A60E230051FC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		910AD2A125A60F4D0051FC98 /* BrandFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFont.swift; sourceTree = "<group>"; };
 		910AD2A925A612BE0051FC98 /* BrandColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandColor.swift; sourceTree = "<group>"; };
@@ -167,9 +167,9 @@
 		910AD26625A60E200051FC98 = {
 			isa = PBXGroup;
 			children = (
-				910AD27125A60E200051FC98 /* Trivial iOS */,
-				910AD28325A60E230051FC98 /* Trivial iOSTests */,
-				910AD28E25A60E230051FC98 /* Trivial iOSUITests */,
+				910AD27125A60E200051FC98 /* TriviaRedux */,
+				910AD28325A60E230051FC98 /* TriviaReduxTests */,
+				910AD28E25A60E230051FC98 /* TriviaReduxUITests */,
 				910AD27025A60E200051FC98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -177,14 +177,14 @@
 		910AD27025A60E200051FC98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				910AD26F25A60E200051FC98 /* Trivial iOS.app */,
-				910AD28025A60E230051FC98 /* Trivial iOSTests.xctest */,
-				910AD28B25A60E230051FC98 /* Trivial iOSUITests.xctest */,
+				910AD26F25A60E200051FC98 /* TriviaRedux.app */,
+				910AD28025A60E230051FC98 /* TriviaReduxTests.xctest */,
+				910AD28B25A60E230051FC98 /* TriviaReduxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		910AD27125A60E200051FC98 /* Trivial iOS */ = {
+		910AD27125A60E200051FC98 /* TriviaRedux */ = {
 			isa = PBXGroup;
 			children = (
 				919E094425A68F8F00458960 /* Modules */,
@@ -193,10 +193,10 @@
 				910AD2A025A60F3F0051FC98 /* Brand */,
 				910AD27625A60E220051FC98 /* Assets.xcassets */,
 				910AD27B25A60E220051FC98 /* Info.plist */,
-				910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */,
+				910AD27225A60E200051FC98 /* TriviaReduxApp.swift */,
 				910AD27825A60E220051FC98 /* Preview Content */,
 			);
-			path = "Trivial iOS";
+			path = TriviaRedux;
 			sourceTree = "<group>";
 		};
 		910AD27825A60E220051FC98 /* Preview Content */ = {
@@ -207,22 +207,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		910AD28325A60E230051FC98 /* Trivial iOSTests */ = {
+		910AD28325A60E230051FC98 /* TriviaReduxTests */ = {
 			isa = PBXGroup;
 			children = (
-				910AD28425A60E230051FC98 /* Trivial_iOSTests.swift */,
+				910AD28425A60E230051FC98 /* TrivialReduxTests.swift */,
 				910AD28625A60E230051FC98 /* Info.plist */,
 			);
-			path = "Trivial iOSTests";
+			path = TriviaReduxTests;
 			sourceTree = "<group>";
 		};
-		910AD28E25A60E230051FC98 /* Trivial iOSUITests */ = {
+		910AD28E25A60E230051FC98 /* TriviaReduxUITests */ = {
 			isa = PBXGroup;
 			children = (
-				910AD28F25A60E230051FC98 /* Trivial_iOSUITests.swift */,
+				910AD28F25A60E230051FC98 /* TrivialReduxUITests.swift */,
 				910AD29125A60E230051FC98 /* Info.plist */,
 			);
-			path = "Trivial iOSUITests";
+			path = TriviaReduxUITests;
 			sourceTree = "<group>";
 		};
 		910AD2A025A60F3F0051FC98 /* Brand */ = {
@@ -422,9 +422,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		910AD26E25A60E200051FC98 /* Trivial iOS */ = {
+		910AD26E25A60E200051FC98 /* TriviaRedux */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 910AD29425A60E230051FC98 /* Build configuration list for PBXNativeTarget "Trivial iOS" */;
+			buildConfigurationList = 910AD29425A60E230051FC98 /* Build configuration list for PBXNativeTarget "TriviaRedux" */;
 			buildPhases = (
 				910AD26B25A60E200051FC98 /* Sources */,
 				910AD26C25A60E200051FC98 /* Frameworks */,
@@ -434,17 +434,17 @@
 			);
 			dependencies = (
 			);
-			name = "Trivial iOS";
+			name = TriviaRedux;
 			packageProductDependencies = (
 				915989C525ABC3B70059528B /* HTMLEntities */,
 			);
 			productName = "Trivial iOS";
-			productReference = 910AD26F25A60E200051FC98 /* Trivial iOS.app */;
+			productReference = 910AD26F25A60E200051FC98 /* TriviaRedux.app */;
 			productType = "com.apple.product-type.application";
 		};
-		910AD27F25A60E230051FC98 /* Trivial iOSTests */ = {
+		910AD27F25A60E230051FC98 /* TriviaReduxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 910AD29725A60E230051FC98 /* Build configuration list for PBXNativeTarget "Trivial iOSTests" */;
+			buildConfigurationList = 910AD29725A60E230051FC98 /* Build configuration list for PBXNativeTarget "TriviaReduxTests" */;
 			buildPhases = (
 				910AD27C25A60E230051FC98 /* Sources */,
 				910AD27D25A60E230051FC98 /* Frameworks */,
@@ -455,14 +455,14 @@
 			dependencies = (
 				910AD28225A60E230051FC98 /* PBXTargetDependency */,
 			);
-			name = "Trivial iOSTests";
+			name = TriviaReduxTests;
 			productName = "Trivial iOSTests";
-			productReference = 910AD28025A60E230051FC98 /* Trivial iOSTests.xctest */;
+			productReference = 910AD28025A60E230051FC98 /* TriviaReduxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		910AD28A25A60E230051FC98 /* Trivial iOSUITests */ = {
+		910AD28A25A60E230051FC98 /* TriviaReduxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 910AD29A25A60E230051FC98 /* Build configuration list for PBXNativeTarget "Trivial iOSUITests" */;
+			buildConfigurationList = 910AD29A25A60E230051FC98 /* Build configuration list for PBXNativeTarget "TriviaReduxUITests" */;
 			buildPhases = (
 				910AD28725A60E230051FC98 /* Sources */,
 				910AD28825A60E230051FC98 /* Frameworks */,
@@ -473,9 +473,9 @@
 			dependencies = (
 				910AD28D25A60E230051FC98 /* PBXTargetDependency */,
 			);
-			name = "Trivial iOSUITests";
+			name = TriviaReduxUITests;
 			productName = "Trivial iOSUITests";
-			productReference = 910AD28B25A60E230051FC98 /* Trivial iOSUITests.xctest */;
+			productReference = 910AD28B25A60E230051FC98 /* TriviaReduxUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -500,7 +500,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 910AD26A25A60E200051FC98 /* Build configuration list for PBXProject "Trivial iOS" */;
+			buildConfigurationList = 910AD26A25A60E200051FC98 /* Build configuration list for PBXProject "TriviaRedux" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -516,9 +516,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				910AD26E25A60E200051FC98 /* Trivial iOS */,
-				910AD27F25A60E230051FC98 /* Trivial iOSTests */,
-				910AD28A25A60E230051FC98 /* Trivial iOSUITests */,
+				910AD26E25A60E200051FC98 /* TriviaRedux */,
+				910AD27F25A60E230051FC98 /* TriviaReduxTests */,
+				910AD28A25A60E230051FC98 /* TriviaReduxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -588,7 +588,7 @@
 				9173BF8025A77EEB00FCD5D4 /* ValidationPublishers.swift in Sources */,
 				910AD27525A60E200051FC98 /* LoginView.swift in Sources */,
 				9126234625A683CF007332CF /* Question.swift in Sources */,
-				910AD27325A60E200051FC98 /* Trivial_iOSApp.swift in Sources */,
+				910AD27325A60E200051FC98 /* TriviaReduxApp.swift in Sources */,
 				9185216B25A7C7DC006F212F /* AppAction.swift in Sources */,
 				918521E225A89616006F212F /* logMiddleware.swift in Sources */,
 				918521BE25A86A2C006F212F /* GameMiddleware.swift in Sources */,
@@ -608,7 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				910AD28525A60E230051FC98 /* Trivial_iOSTests.swift in Sources */,
+				910AD28525A60E230051FC98 /* TrivialReduxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				910AD29025A60E230051FC98 /* Trivial_iOSUITests.swift in Sources */,
+				910AD29025A60E230051FC98 /* TrivialReduxUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,12 +625,12 @@
 /* Begin PBXTargetDependency section */
 		910AD28225A60E230051FC98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 910AD26E25A60E200051FC98 /* Trivial iOS */;
+			target = 910AD26E25A60E200051FC98 /* TriviaRedux */;
 			targetProxy = 910AD28125A60E230051FC98 /* PBXContainerItemProxy */;
 		};
 		910AD28D25A60E230051FC98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 910AD26E25A60E200051FC98 /* Trivial iOS */;
+			target = 910AD26E25A60E200051FC98 /* TriviaRedux */;
 			targetProxy = 910AD28C25A60E230051FC98 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -758,16 +758,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Trivial iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TriviaRedux/Preview Content\"";
 				DEVELOPMENT_TEAM = 596PS285KG;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Trivial iOS/Info.plist";
+				INFOPLIST_FILE = TriviaRedux/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "conradomateu.Trivial-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = conradomateu.TriviaRedux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -780,16 +780,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Trivial iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TriviaRedux/Preview Content\"";
 				DEVELOPMENT_TEAM = 596PS285KG;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Trivial iOS/Info.plist";
+				INFOPLIST_FILE = TriviaRedux/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "conradomateu.Trivial-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = conradomateu.TriviaRedux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -814,7 +814,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivial iOS.app/Trivial iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TriviaRedux.app/TriviaRedux";
 			};
 			name = Debug;
 		};
@@ -836,7 +836,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivial iOS.app/Trivial iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TriviaRedux.app/TriviaRedux";
 			};
 			name = Release;
 		};
@@ -883,7 +883,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		910AD26A25A60E200051FC98 /* Build configuration list for PBXProject "Trivial iOS" */ = {
+		910AD26A25A60E200051FC98 /* Build configuration list for PBXProject "TriviaRedux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				910AD29225A60E230051FC98 /* Debug */,
@@ -892,7 +892,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		910AD29425A60E230051FC98 /* Build configuration list for PBXNativeTarget "Trivial iOS" */ = {
+		910AD29425A60E230051FC98 /* Build configuration list for PBXNativeTarget "TriviaRedux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				910AD29525A60E230051FC98 /* Debug */,
@@ -901,7 +901,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		910AD29725A60E230051FC98 /* Build configuration list for PBXNativeTarget "Trivial iOSTests" */ = {
+		910AD29725A60E230051FC98 /* Build configuration list for PBXNativeTarget "TriviaReduxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				910AD29825A60E230051FC98 /* Debug */,
@@ -910,7 +910,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		910AD29A25A60E230051FC98 /* Build configuration list for PBXNativeTarget "Trivial iOSUITests" */ = {
+		910AD29A25A60E230051FC98 /* Build configuration list for PBXNativeTarget "TriviaReduxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				910AD29B25A60E230051FC98 /* Debug */,
