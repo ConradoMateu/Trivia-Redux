@@ -1,4 +1,4 @@
-# Trivia-Redux
+# Trivia Redux
 
 Trivia Redux is an App that implements the Redux architecture with latests technologies as SwiftUI and Combine. All of it with Good Practices.
 
@@ -13,6 +13,6 @@ Trivia Redux is an App that implements the Redux architecture with latests techn
 
 ## Redux
 
-<img src="Art/Redux.gif">
+<img src="Art/Redux.gif" width="600" height="450">
 
 
