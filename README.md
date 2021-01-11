@@ -13,6 +13,6 @@ Trivia Redux is an App that implements the Redux architecture with latests techn
 
 ## Redux
 
-<img src="Art/Redux.png">
+<img src="Art/Redux.gif">
 
 
