@@ -63,7 +63,7 @@ struct Login: View {
   }
   
   func login() {
-    self.store.dispatch(AppAction.game(action: .login(playerOne: Player.generate(name: viewModel.userOne, currentTurn: true,image: .heisenberg), playerTwo: Player.generate(name: viewModel.userTwo, currentTurn: false,image: .female))))
+    self.store.dispatch(AppAction.game(action: .login(playerOne: Player.generate(name: viewModel.userOne, currentTurn: true), playerTwo: Player.generate(name: viewModel.userTwo, currentTurn: false))))
     self.store.dispatch(AppAction.settings(action: .changeRoot(toView: .game)))
   }
 }
