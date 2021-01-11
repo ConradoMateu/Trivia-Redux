@@ -54,10 +54,14 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
     case .game(action: .login(let playerOne,let playerTwo)):
       newStore.playerOne = playerOne
       newStore.playerTwo = playerTwo
+    case .game(action: .getUsers):
+      let userOne = gameStore.playerOne
+      let userTwo = gameStore.playerTwo
+      return Just(AppAction.game(action: .refreshGame(playerOne: userOne, playerTwo: userTwo))).eraseToAnyPublisher()
     case .game(action: .checkedAnswer(_)):
       newStore.playerOne.isCurrentTurn = !newStore.playerOne.isCurrentTurn
       newStore.playerTwo.isCurrentTurn = !newStore.playerTwo.isCurrentTurn
-      return Just(AppAction.game(action: .refreshGame(playerOne: newStore.playerOne, playerTwo: newStore.playerTwo))).eraseToAnyPublisher()
+      return Just(AppAction.game(action: .refreshGame(playerOne: gameStore.playerOne, playerTwo: gameStore.playerTwo))).eraseToAnyPublisher()
       
       
     default:

@@ -9,26 +9,29 @@ import SwiftUI
 
 struct Game: View {
   @EnvironmentObject var store: AppStore
-  @ObservedObject var viewModel: GameViewModel = GameViewModel()
-  @State var currentAnswer: String = ""
-  @State var buttonStates: [ButtonState]  = [.normal, .normal, .normal, .normal]
-  @State var currentAnswers: [String] = ["","","",""]
-  @State var disableButtons: Bool = false
-  var findCurrentAnserIndex: Int{
-    for i in 0..<currentAnswers.count{
-      if currentAnswers[i] == currentQuestion.correct_answer{
-        print("\(currentAnswers[i]) == \(currentQuestion.correct_answer): \(i)")
-        return i
-      }
-    }
-    return -1
+  
+  var game: GameStateProtocol {
+    store.state.game
   }
   @State var currentQuestion: Question = Question.empty
-    var body: some View {
-      VStack{
-        if store.state.game.fetching {
+  
+  var currentAnswers: [String] {
+    game.currentAnswers
+  }
+  
+  var buttonStates: [ButtonState] {
+    game.buttonStates
+  }
+  
+  var disableButtons: Bool {
+    game.disableButtons
+  }
+  
+  var body: some View {
+    VStack{
+      if store.state.game.fetching {
         ProgressView("Loading...").brandStyle()
-        }else{
+      }else{
         Spacer()
         HStack{
           BrandPlayerCounter(player: store.state.game.playerOne)
@@ -50,93 +53,60 @@ struct Game: View {
           
           ForEach(0..<currentQuestion.shuffledAnswers.count) { i in
             
-            BrandButton(text: currentAnswers[i], textColor: .brand_white, backgroundColor: buttonStates[i].color,isDisabled: disableButtons,action: {
-              currentAnswer = currentAnswers[i]
-            buttonStates[i] = .checking
-              disableButtons = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
-              currentAnswer = currentAnswers[i]
-              if buttonStates[i] == .checking{
-                if currentAnswers[i] == currentQuestion.correct_answer {
-                  buttonStates[i] = .sucessful
-                }else{
-                  buttonStates[findCurrentAnserIndex] = .sucessful
-                  buttonStates[i] = .failed
-                }
+            BrandButton(text: currentAnswers[i], textColor: .brand_white, backgroundColor: buttonStates[i].color,isDisabled: disableButtons){
+              
+              DispatchQueue.main.async {
+                self.store.dispatch(.game(action: .reduce(buttonIdx: i, for: .answered)))
+              }
+              DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+                self.store.dispatch(.game(action: .reduce(buttonIdx: i, for: .checked)))
+              }
+              DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                
+                self.store.dispatch(.game(action: .check(answer: currentAnswers[i])))
               }
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-              self.store.dispatch(.game(action: .check(answer: currentAnswers[i])))
-            }
-            })
           }
         }
-          Spacer()
-        }
-        
-        
-      }.padding([.leading,.trailing],10)
-      .backgroundConfig()
-
-      .onAppear(){
-        self.store.dispatch(.game(action: .fetch))
-      }.onReceive(store.state.game.isCorrectAnswer){ isCorrect in
+        Spacer()
+      }
+    }.padding([.leading,.trailing],10)
+    .backgroundConfig()
+    .onAppear(){
+      self.store.dispatch(.game(action: .fetch))
+    }.onReceive(store.state.game.isCorrectAnswer){ isCorrect in
+      DispatchQueue.main.async {
+        self.store.dispatch(.game(action: .next))
+      }
+      
+    }.onReceive(self.store.state.game.nextQuestion){ newQuestion in
+      currentQuestion = newQuestion
+      DispatchQueue.main.async {
+        self.store.dispatch(.game(action: .reduce(buttonIdx: -1, for: .notAnswered)))
+        self.store.dispatch(.game(action: .save(currentQuestion: newQuestion)))
+      }
+    }.onReceive(self.store.state.game.endGame){ isGameEnded in
+      if isGameEnded {
         DispatchQueue.main.async {
-          self.store.dispatch(.game(action: .next))
-        }
-        
-        buttonStates = [.normal, .normal, .normal, .normal]
-        disableButtons = false
-      }.onReceive(self.store.state.game.nextQuestion){ newQuestion in
-        currentAnswers = newQuestion.flattenedAnswers
-        currentQuestion = newQuestion
-        currentAnswers.shuffle()
-        DispatchQueue.main.async {
-          self.store.dispatch(.game(action: .save(currentQuestion: newQuestion)))
-        }
-        
-      }.onReceive(self.store.state.game.endGame){ isGameEnded in
-        if isGameEnded {
-          DispatchQueue.main.async {
-            store.dispatch(.game(action: .gameEnded))
-          }
+          store.dispatch(.game(action: .gameEnded))
         }
       }
     }
+  }
   
   func checkColor(for state: ButtonState) -> Color {
-      return state.color
+    return state.color
   }
-
+  
 }
 
 struct Game_Previews: PreviewProvider {
-    static var previews: some View {
-      Game().environmentObject(StoreGenerator.initialState)
-    }
-}
-
-
-enum ButtonState {
-  case normal, checking, failed, sucessful
-  
-
-}
-
-extension ButtonState {
-   var color:Color {
-    switch self{
-    case .normal:
-      return .brand_blue
-    case .checking:
-      return .yellow
-    case .sucessful:
-    return .brand_green
-    case .failed:
-      return .brand_red
-    }
+  static var previews: some View {
+    Game().environmentObject(StoreGenerator.initialState)
   }
 }
+
+
+
 
 

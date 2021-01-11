@@ -22,6 +22,10 @@ struct WinnerView: View {
     winner.score == winnerTwo.score
   }
   
+  var isPlayerOneWinner:Bool {
+    winner.score > winnerTwo.score
+  }
+  
   var winnerText: String {
     drawGame ? "Draw" : "Winner"
   }
@@ -34,15 +38,26 @@ struct WinnerView: View {
             .foregroundColor(.white)
             .shadow(color: .black, radius: 10)
             .font(.custom(.title, size: .titleMid))
-          BrandPlayerCounter(player: winner)
-            .scaleEffect(1.5)
+          
           if drawGame {
+            BrandPlayerCounter(player: winner)
+              .scaleEffect(1.5)
+            BrandPlayerCounter(player: winnerTwo)
+              .scaleEffect(1.5)
+          }else if isPlayerOneWinner {
+            BrandPlayerCounter(player: winner)
+              .scaleEffect(1.5)
+          }else {
             BrandPlayerCounter(player: winnerTwo)
               .scaleEffect(1.5)
           }
         }
       }.backgroundConfig()
       .onAppear(){
+        DispatchQueue.main.async {
+          self.store.dispatch(.game(action: .getUsers))
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5){
           store.dispatch(.game(action: .reset))
           store.dispatch(.settings(action: .reset))

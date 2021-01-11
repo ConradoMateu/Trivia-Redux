@@ -40,7 +40,6 @@ extension Question {
   }
   
   var decodeHTML: Question{
-    let decodedQuestion: Question
     let decodedWrongAnswers = self.incorrect_answers.map{$0.htmlUnescape()}
     let decodedCorrectAnswer = self.correct_answer.htmlUnescape()
     let decodedQ = self.question.htmlUnescape()

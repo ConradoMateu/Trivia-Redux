@@ -19,4 +19,6 @@ enum GameAction {
   case check(answer: String)
   case checkedAnswer(isCorrect: Bool)
   case refreshGame(playerOne: Player, playerTwo: Player)
+  case reduce(buttonIdx: Int,for: AnswerState)
+  case getUsers
 }
