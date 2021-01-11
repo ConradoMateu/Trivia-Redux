@@ -69,9 +69,10 @@ final class GameStore: GameStoreProtocol {
   
   func check(answer: String) -> AnyPublisher<Bool, Never> {
     if currentQuestion.correct_answer == answer {
-      incrementScore()
+      
       return Future<Bool, Never> { promise in
           DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+            
               promise(.success(true))
           }
       }

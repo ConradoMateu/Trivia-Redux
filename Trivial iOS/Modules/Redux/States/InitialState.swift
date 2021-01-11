@@ -19,6 +19,7 @@ struct GameState: GameStateProtocol {
   var endGame = PassthroughSubject<Bool, Never>()
   var currentQuestion: Int = -1
 
+
 }
 
 struct SettingsState: SettingsStateProtocol {

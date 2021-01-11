@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,11 @@
 		9126235B25A68578007332CF /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235A25A68578007332CF /* ServiceLayer.swift */; };
 		9126236025A68703007332CF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126235F25A68703007332CF /* GameViewModel.swift */; };
 		9126236525A68829007332CF /* PublisherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126236425A68829007332CF /* PublisherExtensions.swift */; };
+		915989B425ABA44F0059528B /* Astro-Space.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 915989B325ABA44E0059528B /* Astro-Space.ttf */; };
+		915989BB25ABBC630059528B /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915989BA25ABBC630059528B /* Keyboard.swift */; };
+		915989C025ABBF040059528B /* HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915989BF25ABBF040059528B /* HTML.swift */; };
+		915989C625ABC3B70059528B /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 915989C525ABC3B70059528B /* HTMLEntities */; };
+		915989CC25ABC8410059528B /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915989CB25ABC8410059528B /* WinnerView.swift */; };
 		9173BF7325A77A9B00FCD5D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF7225A77A9B00FCD5D4 /* LoginViewModel.swift */; };
 		9173BF7B25A77EB900FCD5D4 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF7A25A77EB900FCD5D4 /* Validation.swift */; };
 		9173BF8025A77EEB00FCD5D4 /* ValidationPublishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173BF7F25A77EEB00FCD5D4 /* ValidationPublishers.swift */; };
@@ -99,6 +104,10 @@
 		9126235A25A68578007332CF /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
 		9126235F25A68703007332CF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		9126236425A68829007332CF /* PublisherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtensions.swift; sourceTree = "<group>"; };
+		915989B325ABA44E0059528B /* Astro-Space.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Astro-Space.ttf"; sourceTree = "<group>"; };
+		915989BA25ABBC630059528B /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		915989BF25ABBF040059528B /* HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTML.swift; sourceTree = "<group>"; };
+		915989CB25ABC8410059528B /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		9173BF7225A77A9B00FCD5D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9173BF7A25A77EB900FCD5D4 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		9173BF7F25A77EEB00FCD5D4 /* ValidationPublishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationPublishers.swift; sourceTree = "<group>"; };
@@ -134,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915989C625ABC3B70059528B /* HTMLEntities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,9 +191,9 @@
 				910AD2AE25A653F60051FC98 /* Util */,
 				9126234425A683BF007332CF /* Model */,
 				910AD2A025A60F3F0051FC98 /* Brand */,
-				910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */,
 				910AD27625A60E220051FC98 /* Assets.xcassets */,
 				910AD27B25A60E220051FC98 /* Info.plist */,
+				910AD27225A60E200051FC98 /* Trivial_iOSApp.swift */,
 				910AD27825A60E220051FC98 /* Preview Content */,
 			);
 			path = "Trivial iOS";
@@ -218,6 +228,7 @@
 		910AD2A025A60F3F0051FC98 /* Brand */ = {
 			isa = PBXGroup;
 			children = (
+				915989B325ABA44E0059528B /* Astro-Space.ttf */,
 				910AD2A125A60F4D0051FC98 /* BrandFont.swift */,
 				910AD2A925A612BE0051FC98 /* BrandColor.swift */,
 			);
@@ -230,10 +241,10 @@
 				918521AD25A7DDA0006F212F /* Defaults */,
 				9185214725A78EB7006F212F /* BrandViews */,
 				9173BF7925A77EA200FCD5D4 /* Validation */,
-				910AD2AF25A654050051FC98 /* ViewModifiers.swift */,
 				9126236425A68829007332CF /* PublisherExtensions.swift */,
 				918521D425A877FC006F212F /* Constants.swift */,
 				918521E725A8AF33006F212F /* ServiceLocator.swift */,
+				915989BF25ABBF040059528B /* HTML.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -272,6 +283,22 @@
 			path = APIService;
 			sourceTree = "<group>";
 		};
+		915989CA25ABC8330059528B /* Winner */ = {
+			isa = PBXGroup;
+			children = (
+				915989CB25ABC8410059528B /* WinnerView.swift */,
+			);
+			path = Winner;
+			sourceTree = "<group>";
+		};
+		916EA74525ABDEB30054F551 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				9185215B25A7C56C006F212F /* ContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
 		9173BF7125A77A7900FCD5D4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +322,8 @@
 		9185214725A78EB7006F212F /* BrandViews */ = {
 			isa = PBXGroup;
 			children = (
+				915989BA25ABBC630059528B /* Keyboard.swift */,
+				910AD2AF25A654050051FC98 /* ViewModifiers.swift */,
 				9126233525A67D31007332CF /* BrandButton.swift */,
 				9126233025A66298007332CF /* BrandField.swift */,
 				9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */,
@@ -380,11 +409,12 @@
 		919E094425A68F8F00458960 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				916EA74525ABDEB30054F551 /* ContentView */,
+				915989CA25ABC8330059528B /* Winner */,
 				9185214825A78FB0006F212F /* Game */,
 				9173BF7125A77A7900FCD5D4 /* Login */,
 				9126233B25A68199007332CF /* Redux */,
 				9126235425A684C8007332CF /* APIService */,
-				9185215B25A7C56C006F212F /* ContentView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -405,6 +435,9 @@
 			dependencies = (
 			);
 			name = "Trivial iOS";
+			packageProductDependencies = (
+				915989C525ABC3B70059528B /* HTMLEntities */,
+			);
 			productName = "Trivial iOS";
 			productReference = 910AD26F25A60E200051FC98 /* Trivial iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -476,6 +509,9 @@
 				Base,
 			);
 			mainGroup = 910AD26625A60E200051FC98;
+			packageReferences = (
+				915989C425ABC3B70059528B /* XCRemoteSwiftPackageReference "swift-html-entities" */,
+			);
 			productRefGroup = 910AD27025A60E200051FC98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				910AD27A25A60E220051FC98 /* Preview Assets.xcassets in Resources */,
+				915989B425ABA44F0059528B /* Astro-Space.ttf in Resources */,
 				910AD27725A60E220051FC98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915989C025ABBF040059528B /* HTML.swift in Sources */,
 				910AD2A225A60F4D0051FC98 /* BrandFont.swift in Sources */,
 				9126234E25A68415007332CF /* QuestionResponse.swift in Sources */,
 				918521C825A86B7B006F212F /* CodingKeys.swift in Sources */,
@@ -532,6 +570,7 @@
 				9173BF8A25A77FA100FCD5D4 /* Validation+SwiftUI.swift in Sources */,
 				919E093325A68ED800458960 /* QuestionsAction.swift in Sources */,
 				9185220425A9D72A006F212F /* BrandPlayerCounter.swift in Sources */,
+				915989BB25ABBC630059528B /* Keyboard.swift in Sources */,
 				918521A425A7D7BD006F212F /* SettingsReducer.swift in Sources */,
 				918521C325A86A59006F212F /* GameStore.swift in Sources */,
 				918521E825A8AF33006F212F /* ServiceLocator.swift in Sources */,
@@ -557,6 +596,7 @@
 				9173BF8525A77F5A00FCD5D4 /* Publisher+Validation.swift in Sources */,
 				910AD2B025A654050051FC98 /* ViewModifiers.swift in Sources */,
 				9126233125A66298007332CF /* BrandField.swift in Sources */,
+				915989CC25ABC8410059528B /* WinnerView.swift in Sources */,
 				9126233625A67D31007332CF /* BrandButton.swift in Sources */,
 				9126236525A68829007332CF /* PublisherExtensions.swift in Sources */,
 				918521F625A9D5DE006F212F /* Player.swift in Sources */,
@@ -880,6 +920,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		915989C425ABC3B70059528B /* XCRemoteSwiftPackageReference "swift-html-entities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Kitura/swift-html-entities.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		915989C525ABC3B70059528B /* HTMLEntities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 915989C425ABC3B70059528B /* XCRemoteSwiftPackageReference "swift-html-entities" */;
+			productName = HTMLEntities;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 910AD26725A60E200051FC98 /* Project object */;
 }

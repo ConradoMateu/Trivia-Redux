@@ -15,7 +15,8 @@ func settingsReducer(state: inout SettingsStateProtocol, action: SettingsAction)
     state.appState = currentView
   case .setNumberOfLaunches(let number):
     state.numberOfLaunches = number
-    
+  case .reset:
+    state.appState = .login
   default:
     break
   }

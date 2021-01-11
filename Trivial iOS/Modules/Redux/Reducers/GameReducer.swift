@@ -26,17 +26,20 @@ func gameReducer(state: inout GameStateProtocol, action: GameAction) -> Void {
       }else{
         state.endGame.send(true)
       }
-      
-    case .gameEnded:
-      state.endGame.send(true)
+    case .reset:
+      state = GameState()
     case .fetch:
       state.fetching = true
     case .login(let playerOne, let playerTwo):
       state.playerOne = playerOne
       state.playerTwo = playerTwo
     case .checkedAnswer(let isCorrectAnswer):
+      
       state.isCorrectAnswer.send(isCorrectAnswer)
       
+    case .gameEnded:
+      state.playerOne.isCurrentTurn = false
+      state.playerTwo.isCurrentTurn = false
     case .refreshGame(let playerOne, let playerTwo):
       state.playerOne = playerOne
       state.playerTwo = playerTwo

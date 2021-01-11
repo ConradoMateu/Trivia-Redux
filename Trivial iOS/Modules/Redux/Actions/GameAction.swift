@@ -15,6 +15,7 @@ enum GameAction {
   case login(playerOne: Player, playerTwo: Player)
   case save(currentQuestion: Question)
   case gameEnded
+  case reset
   case check(answer: String)
   case checkedAnswer(isCorrect: Bool)
   case refreshGame(playerOne: Player, playerTwo: Player)

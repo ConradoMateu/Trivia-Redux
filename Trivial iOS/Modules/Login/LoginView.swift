@@ -14,13 +14,13 @@ struct Login: View {
   @ObservedObject var viewModel:LoginViewModel = LoginViewModel()
   @State var isButtonDisabled = true
 
-  var padding: CGFloat = 60
+  var padding: CGFloat = 90
   
   var body: some View {
     VStack{
-      Text("Trivial iOS")
+      Text("Trivia iOS")
         .foregroundColor(.brand_white)
-        .font(.custom(.primary, size: .title2))
+        .font(.custom(.title, size: .titleMid))
         .padding(.top,padding)
       Spacer()
       VStack{
@@ -52,8 +52,12 @@ struct Login: View {
       .padding([.leading,.trailing], 20)
       .padding(.top,-padding)
       Spacer()
-    }.backgroundConfig()
-    .onReceive(viewModel.allValidation, perform: {validation in self.isButtonDisabled = !validation.isSuccess})
+    }.backgroundConfig().onTapGesture {
+      hideKeyboard()
+    }
+    .onReceive(viewModel.allValidation, perform: {
+                validation in self.isButtonDisabled = !validation.isSuccess
+    })
     
   }
   

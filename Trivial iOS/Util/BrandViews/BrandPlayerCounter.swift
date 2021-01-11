@@ -16,9 +16,9 @@ struct BrandPlayerCounter: View {
           .resizable()
           .frame(width: 50, height: 50)
           .foregroundColor(.brand_white)
-        VStack{
-          Text(player.name)
-          Text("Score: \(player.score)")
+        VStack(alignment:.leading){
+          Text(player.name).foregroundColor(.white)
+          Text("Score: \(player.score)").font(.custom(.primary, size: .footnote)).foregroundColor(.white)
         }
       }.padding().background(RoundedRectangle(cornerRadius: 10)
                               .foregroundColor(player.isCurrentTurn ? .brand_green : .brand_blue))
@@ -29,7 +29,10 @@ struct BrandPlayerCounter: View {
 
 struct BrandPlayerCounter_Previews: PreviewProvider {
     static var previews: some View {
-      BrandPlayerCounter(player: Player.generate(name: "Player", currentTurn: false))
-      BrandPlayerCounter(player: Player.generate(name: "Player", currentTurn: true))
+      VStack{
+        BrandPlayerCounter(player: Player.generate(name: "Player", currentTurn: false))
+        BrandPlayerCounter(player: Player.generate(name: "Player", currentTurn: true))
+      }
+      
     }
 }

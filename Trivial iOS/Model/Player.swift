@@ -33,7 +33,7 @@ extension Player{
            avatarImage: randomAvatar,
            isCurrentTurn: false)
   }
-  static func generate(name: String, currentTurn: Bool) -> Player {
+  static func generate(name: String, currentTurn: Bool = false) -> Player {
     return Player(name: name,
                   score: 0,
                   avatarImage: randomAvatar,
@@ -41,6 +41,7 @@ extension Player{
   }
   
 }
+
 
 
 enum AvatarImage:String, CaseIterable {

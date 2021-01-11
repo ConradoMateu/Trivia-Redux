@@ -18,7 +18,7 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
     case .game(action: .fetch):
       return gameStore.fetch().subscribe(on: DispatchQueue.main)
         .map {
-          AppAction.game(action: .fetchComplete(questions: $0 ))
+          AppAction.game(action: .fetchComplete(questions: $0.map{$0.decodeHTML} ))
         }
         .catch { (error: ApiError) -> Just<AppAction> in
           switch(error) {
@@ -33,12 +33,20 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
           }
         }
         .eraseToAnyPublisher()
+    case .game(action: .reset):
+      return Just(newStore.reset()).map{
+        AppAction.settings(action: .reset)
+      }.map{
+        AppAction.settings(action: .changeRoot(toView: .login))
+      }
+      .eraseToAnyPublisher()
     case .game(action: .gameEnded):
-      newStore.reset()
+      newStore.playerOne.isCurrentTurn = false
+      newStore.playerTwo.isCurrentTurn = false
+      return Just(AppAction.settings(action: .changeRoot(toView: .endGame))).eraseToAnyPublisher()
+
       
-    //    case .game(action: .next(let question)):
-    //      newStore.next(question: question)
-    //      return Just(AppAction.game(action: .next(question: newStore.currentQuestion))).eraseToAnyPublisher()
+
     case .game(action: .save(let question)):
       newStore.currentQuestion = question
     case .game(action: .check(let answer)):
@@ -49,7 +57,7 @@ func gameMiddleware(gameStore: GameStoreProtocol) -> Middleware<AppState, AppAct
     case .game(action: .login(let playerOne,let playerTwo)):
       newStore.playerOne = playerOne
       newStore.playerTwo = playerTwo
-    case .game(action: .checkedAnswer(let isCorrect)):
+    case .game(action: .checkedAnswer(_)):
       newStore.playerOne.isCurrentTurn = !newStore.playerOne.isCurrentTurn
       newStore.playerTwo.isCurrentTurn = !newStore.playerTwo.isCurrentTurn
       return Just(AppAction.game(action: .refreshGame(playerOne: newStore.playerOne, playerTwo: newStore.playerTwo))).eraseToAnyPublisher()

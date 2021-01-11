@@ -10,11 +10,12 @@ import SwiftUI
 
 enum BrandFont: String {
   case primary = "CooperBlackStd"
-  case secondary = "BwSurco-Book"
+  case title = "aAstroSpace"
 }
 
 enum TextType: CGFloat {
   case title = 60
+  case titleMid = 45
   case title2 = 30
   case subTitle = 20
   case subTitle2 = 16

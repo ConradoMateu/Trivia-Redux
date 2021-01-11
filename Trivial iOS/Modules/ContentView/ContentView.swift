@@ -17,7 +17,7 @@ struct ContentView: View {
         case .game:
           Game().environmentObject(store)
         case .endGame:
-          EmptyView()
+          WinnerView().environmentObject(store)
         }
       }
     }

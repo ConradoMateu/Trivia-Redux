@@ -18,7 +18,8 @@ func settingsMiddleware(appSettings: AppSettingsStoreProtocol) -> Middleware<App
       settings.rootView = view
     case .settings(action: .setNumberOfLaunches(let launches)):
       settings.numberOfLaunches = launches
-      
+    case .settings(action: .reset):
+      settings.rootView = .login
     default:
       break
       

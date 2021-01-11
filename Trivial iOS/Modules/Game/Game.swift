@@ -14,6 +14,15 @@ struct Game: View {
   @State var buttonStates: [ButtonState]  = [.normal, .normal, .normal, .normal]
   @State var currentAnswers: [String] = ["","","",""]
   @State var disableButtons: Bool = false
+  var findCurrentAnserIndex: Int{
+    for i in 0..<currentAnswers.count{
+      if currentAnswers[i] == currentQuestion.correct_answer{
+        print("\(currentAnswers[i]) == \(currentQuestion.correct_answer): \(i)")
+        return i
+      }
+    }
+    return -1
+  }
   @State var currentQuestion: Question = Question.empty
     var body: some View {
       VStack{
@@ -44,82 +53,70 @@ struct Game: View {
             BrandButton(text: currentAnswers[i], textColor: .brand_white, backgroundColor: buttonStates[i].color,isDisabled: disableButtons,action: {
               currentAnswer = currentAnswers[i]
             buttonStates[i] = .checking
-              
+              disableButtons = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
               currentAnswer = currentAnswers[i]
-              
-              buttonStates[findCurrentAnserIndex()] = .sucessful
-//              disableButtons = true
-              
               if buttonStates[i] == .checking{
                 if currentAnswers[i] == currentQuestion.correct_answer {
                   buttonStates[i] = .sucessful
                 }else{
-                  
+                  buttonStates[findCurrentAnserIndex] = .sucessful
                   buttonStates[i] = .failed
                 }
-                
               }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-             
               self.store.dispatch(.game(action: .check(answer: currentAnswers[i])))
             }
-            
-
-            
             })
-                
-            .disabled(disableButtons)
-            
           }
         }
           Spacer()
         }
         
         
-      }.padding([.leading,.trailing],10).backgroundConfig()
-      .onReceive(store.state.game.isCorrectAnswer, perform: { isCorrect in
-        print("is Corret \(isCorrect)")
-        self.store.dispatch(.game(action: .next))
-        buttonStates = [.normal, .normal, .normal, .normal]
-        disableButtons = false
-      })
+      }.padding([.leading,.trailing],10)
+      .backgroundConfig()
+
       .onAppear(){
         self.store.dispatch(.game(action: .fetch))
-      }.onReceive(self.store.state.game.nextQuestion, perform: { newQuestion in
-        print(newQuestion.flattenedAnswers)
+        for family in UIFont.familyNames {
+          let sName: String = family as String
+          print("family: \(sName)")
+
+          for name in UIFont.fontNames(forFamilyName: sName) {
+            print("name: \(name as String)")
+          }
+        }
+      }.onReceive(store.state.game.isCorrectAnswer){ isCorrect in
+        DispatchQueue.main.async {
+          self.store.dispatch(.game(action: .next))
+        }
+        
+        buttonStates = [.normal, .normal, .normal, .normal]
+        disableButtons = false
+      }.onReceive(self.store.state.game.nextQuestion){ newQuestion in
         currentAnswers = newQuestion.flattenedAnswers
         currentQuestion = newQuestion
         currentAnswers.shuffle()
+        DispatchQueue.main.async {
+          self.store.dispatch(.game(action: .save(currentQuestion: newQuestion)))
+        }
         
-        
-        self.store.dispatch(.game(action: .save(currentQuestion: newQuestion)))
-        viewModel.refresh(question: newQuestion)
-        
-        //Si no esta empty las questions
-        //Delay 3 secods
-        
-        //change color
-        
-        print(viewModel.answers.debugDescription)
-      })
+      }.onReceive(self.store.state.game.endGame){ isGameEnded in
+        if isGameEnded {
+          DispatchQueue.main.async {
+            store.dispatch(.game(action: .gameEnded))
+          }
+        }
+      }
     }
   
   func checkColor(for state: ButtonState) -> Color {
       return state.color
   }
-  func findCurrentAnserIndex() -> Int{
-    
-    for i in 0..<currentAnswers.count{
-      if currentAnswers[i] == currentQuestion.correct_answer{
-        print("\(currentAnswers[i]) == \(currentQuestion.correct_answer): \(i)")
-        return i
-      }
-    }
-    return -1
-  }
+
 }
 
 struct Game_Previews: PreviewProvider {
