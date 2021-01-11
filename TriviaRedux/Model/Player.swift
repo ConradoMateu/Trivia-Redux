@@ -1,6 +1,6 @@
 //
 //  Player.swift
-//  Trivial iOS
+//  TriviaRedux
 //
 //  Created by Conrado Mateu on 9/1/21.
 //
@@ -39,7 +39,12 @@ extension Player{
                   avatarImage: randomAvatar,
                   isCurrentTurn: currentTurn)
   }
-  
+  static func generate(name: String, currentTurn: Bool = false,image: AvatarImage) -> Player {
+    return Player(name: name,
+                  score: 0,
+                  avatarImage: image.rawValue,
+                  isCurrentTurn: currentTurn)
+  }
 }
 
 

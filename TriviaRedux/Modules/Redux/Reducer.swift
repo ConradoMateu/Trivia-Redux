@@ -1,6 +1,6 @@
 //
 //  Reducer.swift
-//  Trivial iOS
+//  TriviaRedux
 //
 //  Created by Conrado Mateu on 7/1/21.
 //

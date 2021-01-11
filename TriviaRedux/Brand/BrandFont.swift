@@ -1,6 +1,6 @@
 //
 //  BrandFont.swift
-//  Trivial iOS
+//  TriviaRedux
 //
 //  Created by Conrado Mateu on 6/1/21.
 //

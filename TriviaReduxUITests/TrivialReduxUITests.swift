@@ -1,6 +1,6 @@
 //
 //  Trivial_iOSUITests.swift
-//  Trivial iOSUITests
+//  TriviaReduxUITests
 //
 //  Created by Conrado Mateu on 6/1/21.
 //

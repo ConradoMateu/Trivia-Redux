@@ -1,6 +1,6 @@
 //
 //  BrandPlayerCounter.swift
-//  Trivial iOS
+//  TriviaRedux
 //
 //  Created by Conrado Mateu on 9/1/21.
 //

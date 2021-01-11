@@ -1,6 +1,6 @@
 //
 //  ButtonState.swift
-//  Trivial iOS
+//  TriviaRedux
 //
 //  Created by Conrado Mateu on 11/1/21.
 //

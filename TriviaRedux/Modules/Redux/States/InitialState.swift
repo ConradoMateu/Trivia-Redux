@@ -1,6 +1,6 @@
 //
 //  InitialState.swift
-//  Trivial iOS
+//  TriviaRedux
 //
 //  Created by Conrado Mateu on 8/1/21.
 //
