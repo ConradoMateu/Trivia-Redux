@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HTMLEntities",
+        "repositoryURL": "git@github.com:Kitura/swift-html-entities.git",
+        "state": {
+          "branch": "master",
+          "revision": "2b14531d0c36dbb7c1c45a4d38db9c2e7898a307",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
