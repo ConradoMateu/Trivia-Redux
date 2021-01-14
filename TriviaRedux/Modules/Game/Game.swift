@@ -36,10 +36,10 @@ struct Game: View {
         Spacer()
         HStack{
           BrandPlayerCounter(player: store.state.game.playerOne)
-            .offset(x: store.state.game.playerOne.isCurrentTurn ? 5 : 0, y: 0)
+            .offset(x: game.playerOne.isCurrentTurn ? 5 : 0, y: 0)
           Spacer()
           BrandPlayerCounter(player: store.state.game.playerTwo)
-            .offset(x: store.state.game.playerTwo.isCurrentTurn ? -5 : 0, y: 0)
+            .offset(x: game.playerTwo.isCurrentTurn ? -5 : 0, y: 0)
         }
         Spacer()
         VStack(spacing: 10){
