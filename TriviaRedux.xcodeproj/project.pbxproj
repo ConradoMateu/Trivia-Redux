@@ -59,6 +59,7 @@
 		9185220425A9D72A006F212F /* BrandPlayerCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185220325A9D72A006F212F /* BrandPlayerCounter.swift */; };
 		919E093325A68ED800458960 /* QuestionsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093225A68ED800458960 /* QuestionsAction.swift */; };
 		919E093825A68F1400458960 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E093725A68F1400458960 /* Reducer.swift */; };
+		91EBFDE025B0AE400068E71B /* QuestionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EBFDDF25B0AE400068E71B /* QuestionText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		9185220325A9D72A006F212F /* BrandPlayerCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPlayerCounter.swift; sourceTree = "<group>"; };
 		919E093225A68ED800458960 /* QuestionsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAction.swift; sourceTree = "<group>"; };
 		919E093725A68F1400458960 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		91EBFDDF25B0AE400068E71B /* QuestionText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 				9126232B25A65BCD007332CF /* BrandRoundedRectangle.swift */,
 				9185220325A9D72A006F212F /* BrandPlayerCounter.swift */,
 				916EA75925ABF6380054F551 /* ButtonState.swift */,
+				91EBFDDF25B0AE400068E71B /* QuestionText.swift */,
 			);
 			path = BrandViews;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				918521BE25A86A2C006F212F /* GameMiddleware.swift in Sources */,
 				9173BF8525A77F5A00FCD5D4 /* Publisher+Validation.swift in Sources */,
 				910AD2B025A654050051FC98 /* ViewModifiers.swift in Sources */,
+				91EBFDE025B0AE400068E71B /* QuestionText.swift in Sources */,
 				9126233125A66298007332CF /* BrandField.swift in Sources */,
 				915989CC25ABC8410059528B /* WinnerView.swift in Sources */,
 				916EA75A25ABF6380054F551 /* ButtonState.swift in Sources */,

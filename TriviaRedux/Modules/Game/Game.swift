@@ -10,10 +10,11 @@ import SwiftUI
 struct Game: View {
   @EnvironmentObject var store: AppStore
   
+  @State var currentQuestion: Question = Question.empty
+  
   var game: GameStateProtocol {
     store.state.game
   }
-  @State var currentQuestion: Question = Question.empty
   
   var currentAnswers: [String] {
     game.currentAnswers
@@ -40,30 +41,13 @@ struct Game: View {
           BrandPlayerCounter(player: store.state.game.playerTwo)
             .offset(x: store.state.game.playerTwo.isCurrentTurn ? -5 : 0, y: 0)
         }
-        
         Spacer()
         VStack(spacing: 10){
-          Text(currentQuestion.question)
-            .foregroundColor(.brand_white)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, idealHeight: 150, maxHeight: 200, alignment: .center)
-            .padding([.leading,.trailing],20)
-            .background(RoundedRectangle(cornerRadius: 10)
-                          .foregroundColor(.brand_blue))
-            .padding(.bottom,20)
+          QuestionText(question: currentQuestion.question)
           
           ForEach(0..<currentQuestion.shuffledAnswers.count) { i in
-            
             BrandButton(text: currentAnswers[i], textColor: .brand_white, backgroundColor: buttonStates[i].color,isDisabled: disableButtons){
-              
-              DispatchQueue.main.async {
-                self.store.dispatch(.game(action: .reduce(buttonIdx: i, for: .answered)))
-              }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
-                self.store.dispatch(.game(action: .reduce(buttonIdx: i, for: .checked)))
-              }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                self.store.dispatch(.game(action: .check(answer: currentAnswers[i])))
-              }
+              onClick(for: i)
             }
           }
         }
@@ -93,8 +77,16 @@ struct Game: View {
     }
   }
   
-  func checkColor(for state: ButtonState) -> Color {
-    return state.color
+  func onClick(for index: Int) {
+    DispatchQueue.main.async {
+      self.store.dispatch(.game(action: .reduce(buttonIdx: index, for: .answered)))
+    }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+      self.store.dispatch(.game(action: .reduce(buttonIdx: index, for: .checked)))
+    }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+      self.store.dispatch(.game(action: .check(answer: currentAnswers[index])))
+    }
   }
   
 }

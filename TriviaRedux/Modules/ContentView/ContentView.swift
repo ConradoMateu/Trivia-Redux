@@ -23,4 +23,8 @@ struct ContentView: View {
     }
 }
 
-
+enum currentView: String, Codable {
+  case login
+  case game
+  case endGame
+}
